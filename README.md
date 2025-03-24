@@ -69,8 +69,8 @@ portfolio-final/
 Para qualquer dúvida ou sugestão, entre em contato através de:
 
 - **Email:** relancio.dev@gmail.com
-- **LinkedIn:** [Meu Linkedin](https://www.linkedin.com/in/relancio-borges-4716a620b/)
-- **Site:** [Meu Portfólio](https://relancioborgesdev.github.io/)
+- **LinkedIn:** [Meu Linkedin](https://www.linkedin.com/in/relancioborges/)
+- **Site:** [Meu Portfólio](https://relancioborgesdev.com/)
 
 ---
 

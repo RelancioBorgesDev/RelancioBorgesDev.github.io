@@ -7,21 +7,47 @@ import Tag from "../react/Tag";
 
 <section class="">
     <SectionHeader hasAll={false} title="Experiência profissional" transition:name="sec-header"/>
-    <div class="mt-2">
-        <div class="flex gap-4 relative max-md:flex-col">
-            <img src="/logo/vpTech.png" alt="" class="w-14 h-14 bg-white rounded-xl"/>
-            <div class="flex flex-col ">
-                <h1 class="text-2xl">Desenvolvedor Front-End</h1>
-                <span>VP Tech</span>
-                <span>out 2023 - dez 2023</span>
-                <small class="text-gray-500">Remoto</small>
-                <p class="font-roboto">Responsável por desenvolver o site de uma cliente, usando React e Tailwind. Também auxiliei outros desenvolvedores no desenvolvimento do site da empresa</p>
+    <ul class="w-full flex flex-col items-start gap-4">
+        <li class="w-full mt-2">
+            <div class="flex gap-4 relative max-md:flex-col">
+                <img src="/logo/virtuabrasil_logo.jpeg" alt="" class="w-14 h-14 rounded-xl"/>
+                <div class="flex flex-col gap-0.5">
+                    <h1 class="text-2xl">Desenvolvedor Fullstack Jr</h1>
+                    <span>Virtua Brasil</span>
+                    <span>jun 2024 - set 2024</span>
+                    <small class="text-gray-500">Presencial</small>
+                    <p class="font-roboto">Responsável por desenvolver projetos e sistemas e também refatorar sistemas legados.</p>
+                    <div class="flex gap-4 mt-1">
+                        <Tag tag="HTML" />
+                        <Tag tag="CSS" />
+                        <Tag tag="JS" />
+                        <Tag tag="PHP" />
+                    </div>
+                </div>
+                <div class="absolute top-0 right-0">
+                    <a href="/portfolio-projects"  rel="noopener noreferrer">
+                        <Tag tag="Ver projetos" />
+                    </a>
+                </div>
             </div>
-            <div class="absolute top-0 right-0">
-                <a href="https://marylialossioadv.com/" target="_blank" rel="noopener noreferrer">
-                    <Tag tag="Ver projeto" />
-                </a>
+        </li>
+        <li class="mt-2">
+            <div class="flex gap-4 relative max-md:flex-col">
+                <img src="/logo/vpTech.png" alt="" class="w-14 h-14 bg-white rounded-xl"/>
+                <div class="flex flex-col ">
+                    <h1 class="text-2xl">Desenvolvedor Front-End</h1>
+                    <span>VP Tech</span>
+                    <span>out 2023 - dez 2023</span>
+                    <small class="text-gray-500">Remoto</small>
+                    <p class="font-roboto">Responsável por desenvolver o site de uma cliente, usando React e Tailwind. Também auxiliei outros desenvolvedores no desenvolvimento do site da empresa</p>
+                    <div class="flex gap-4 mt-1">
+                        <Tag tag="JS" />
+                        <Tag tag="TS" />
+                        <Tag tag="React" />
+                        <Tag tag="Tailwind CSS" />
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        </li>
+    </ul>
 </section>

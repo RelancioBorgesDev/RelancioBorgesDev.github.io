@@ -17,6 +17,21 @@ const projectCollection = defineCollection({
       featured: z.boolean(),
     }),
 });
+
+const projectsVirtua = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      projectType: z.string(),
+      web_link: z.string(),
+      video: z.string(),
+      tags: z.array(z.string()),
+      date: z.date(),
+      card_image: image(),
+    }),
+});
 const postCollection = defineCollection({
   type: "content",
   schema: ({ image }) =>
@@ -35,4 +50,5 @@ const postCollection = defineCollection({
 export const collections = {
   project: projectCollection,
   post: postCollection,
+  projectsVirtua: projectsVirtua
 };

@@ -9,33 +9,44 @@ import FavoriteTech from "./FavoriteTech.astro";
 
 <main id="sobre" class="w-full h-full flex flex-col gap-16 px-4 text-white" transition:animate="slide">
 
-        <div class="w-full py-2 max-sm:w-full  h-full gap-4 max-sm:flex max-sm:flex-col ">
+        <div class="w-full py-2 max-sm:w-full h-full gap-4 max-sm:flex max-sm:flex-col">
             <SectionHeader hasAll={false} title="Sobre" transition:name="sec-header"/>
+            
             <div class="relative border-2 border-tag float-right rounded-xl m-2 flex flex-col items-center max-sm:w-fit">
-                <img src="http://github.com/RelancioBorgesDev.png" class="w-[300px] bg-tag shadow-2xl float-right  rounded-xl"/>
+                <img src="http://github.com/RelancioBorgesDev.png" class="w-[300px] bg-tag shadow-2xl float-right rounded-xl"/>
             </div>
-            <p class="text-lg mt-4 font-medium font-roboto">E aí! Eu sou o Relancio, estudante de engenharia da computação que descobriu o mundo da programação jogando minecraft lá em 2014. Desde então, continuei focado em estudar e por isso estou aqui hoje.
+            
+            <p class="text-lg mt-4 font-medium font-roboto">
+                Olá! Sou o Relancio, graduado em Engenharia da Computação e apaixonado por tecnologia. Minha jornada na programação começou em 2014, jogando Minecraft, e desde então nunca parei de aprender e evoluir.
             </p>
             
-            <p class="text-lg mt-4 font-medium font-roboto">Estou no último ano da faculdade de Engenharia da Computação, entrei no começo de 2020. Meu foco principal é no front end, onde posso desenvolver com toda a minha criatividade e construir interfaces para facilitar a vida das pessoas. Mas não se engane, o backend também me chama atenção, e adoraria me aventurar por lá também.
-            </p>
             <p class="text-lg mt-4 font-medium font-roboto">
-                Se der uma olhada no meu portfólio, vai encontrar de tudo um pouco: desde sites responsivos até projetos de e-commerce. Cada linha de código ali representa um desafio, e estou sempre pronto para o próximo desafio.
-                Essas Aqui são algumas das minhas stacks e ferramentas, não tenho nenhuma favorita, estou disposto a trabalhar com qualquer uma.
+                Minha especialidade é o desenvolvimento front-end, onde posso unir criatividade e tecnologia para criar interfaces intuitivas e funcionais. No entanto, também tenho interesse em back-end e gosto de explorar novas tecnologias para construir aplicações completas e escaláveis.
+            </p>
+            
+            <p class="text-lg mt-4 font-medium font-roboto">
+                No meu portfólio, você encontrará projetos variados, desde sites responsivos até e-commerces completos. Cada linha de código representa um aprendizado e um novo desafio superado. Estou sempre aberto a novas oportunidades e pronto para enfrentar desafios ainda maiores.
+            </p>
+            
+            <p class="text-lg mt-4 font-medium font-roboto">
+                Aqui estão algumas das tecnologias e ferramentas que utilizo no meu dia a dia. Não tenho uma favorita, gosto de aprender e me adaptar a cada novo projeto.
             </p>
             
             <div class="grid grid-cols-2 gap-2 max-sm:w-full mt-4">
                 <FavoriteTech tech="Typescript" />
+                <FavoriteTech tech="Javascript" />
                 <FavoriteTech tech="React" />
                 <FavoriteTech tech="Next JS" />
+                <FavoriteTech tech="Node JS" />
+                <FavoriteTech tech="Nest JS" />
                 <FavoriteTech tech="Astro" />
                 <FavoriteTech tech="HTML" />
                 <FavoriteTech tech="CSS" />
                 <FavoriteTech tech="TailwindCSS" />
                 <FavoriteTech tech="Figma" />
-                <FavoriteTech tech="Javascript" />
             </div>
         </div>
+    
         <Experiencia/>
         <Certificados/>
 </main>

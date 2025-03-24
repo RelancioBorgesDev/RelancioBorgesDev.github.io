@@ -1,0 +1,34 @@
+---
+import ProjectCard from "../components/astro/ProjectCard.astro";
+import AllLayout from "../layouts/AllLayout.astro";
+import {ChevronLeft} from "lucide-react"
+import {getCollection} from "astro:content"
+
+const projectsVirtua = await getCollection("projectsVirtua")
+const uniqueTags: string[] = [];
+projectsVirtua.forEach((projectVirtua) => {
+    projectVirtua.data.tags.forEach((tag) => {
+        if (!uniqueTags.includes(tag)) {
+            uniqueTags.push(tag);
+        }
+    });
+});
+
+---
+
+<AllLayout title="Projetos Virtua Brasl" transition:animate={"fade"}>
+<header class="w-full flex items-center justify-between bg-zinc-800 p-8">
+    <div class="max-sm:hidden text-white">
+        <a href="/">
+            <ChevronLeft size={44}/>
+        </a>
+    </div>
+
+    <p class="text-white font-bold text-4xl">Virtua Brasil</p>
+</header>
+    <section class="w-full grid grid-cols-3 place-content-center place-items-center gap-7 p-8 max-xl:px-4 max-xl:grid-cols-2 max-lg:flex max-lg:flex-wrap max-sm:p-4 max-sm:gap-4">
+        {projectsVirtua.map((projectVirtua) => (
+                <ProjectCard title={projectVirtua.data.title} description={projectVirtua.data.description} projectType={projectVirtua.data.projectType} date={projectVirtua.data.date} tags={projectVirtua.data.tags} card_image={projectVirtua.data.card_image}/>
+        ))}
+    </section>
+</AllLayout>
