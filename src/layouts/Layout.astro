@@ -1,5 +1,6 @@
 ---
-import { Squares } from "../components/react/ui/index";
+import { Squares } from "../components/react/react-bits/index";
+import  Header  from "../components/astro/header.astro";
 ---
 
 <!doctype html>
@@ -11,9 +12,11 @@ import { Squares } from "../components/react/ui/index";
 		<meta name="generator" content={Astro.generator} />
 		<title>Relancio Borges</title>
 	</head>
-	<body class="bg-zinc-900 text-white">
-		<Squares client:load/>
-		<slot />
+	<body class="text-white dark:bg-[#1A1A1D] bg-neutral-300">
+		<Header/>
+		<main class="max-w-[calc(1200px+8em)] mx-auto">
+			<slot />
+		</main>
 	</body>
 </html>
 

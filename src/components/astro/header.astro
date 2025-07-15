@@ -1,0 +1,47 @@
+---
+import { ModeToggle } from "../react/index";
+import { ShinyText } from "../react/react-bits/";
+import { Button } from "../ui/button";
+import { Item } from "../ui/item";
+import { Link } from "../ui/link";
+
+
+
+---
+
+  <header class="flex items-center justify-between px-6 py-4 max-w-[1200px] mx-auto mt-8 rounded-full backdrop:shadow-2xl dark:shadow-none z-50">
+      <nav class="w-full flex justify-between items-center z-10 ">
+        <div class="flex items-center gap-3 ">
+          <Button
+            variant="outline"
+            className="px-4 uppercase py-2 rounded-full text-neutral-900  dark:text-neutral-100 dark:hover:bg-neutral-800 transition"
+          >
+            <Link className="text-inherit" href="#inicio">
+              início
+            </Link>
+          </Button>
+          <Button
+            variant="outline"
+            className="px-4 uppercase py-2 rounded-full text-neutral-900 hover:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-800 transition"
+          >
+            <Link className="text-inherit" href="#sobre">
+              sobre
+            </Link>
+          </Button>
+        </div>
+
+        <div class="flex items-center gap-3">
+      
+              <Button
+            variant="outline"
+            className="px-4 uppercase py-2 rounded-full text-neutral-900  dark:text-neutral-100 dark:hover:bg-neutral-800 transition"
+          >
+            <Link className="text-inherit" href="#projetos">
+              projetos
+            </Link>
+          </Button>
+          <ModeToggle client:load />
+        </div>
+      </nav>
+    </header>
+
