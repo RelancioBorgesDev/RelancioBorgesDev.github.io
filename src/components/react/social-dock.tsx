@@ -30,7 +30,7 @@ export function SocialDock() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1, type: "spring", stiffness: 300 }}
-            className="p-2 text-white rounded-full shadow-lg hover:bg-gray-700"
+            className="p-2 text-white rounded-full shadow-lg hover:border-2"
           >
             <social.icon className="w-5 h-5" />
           </motion.a>
@@ -50,7 +50,7 @@ export function SocialDock() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, type: "spring", stiffness: 300 }}
-            className="p-3 bg-gray-800 text-white rounded-full shadow-lg hover:bg-gray-700"
+            className="p-3 bg-gray-800 text-white rounded-full shadow-lg"
           >
             <social.icon className="w-6 h-6" />
           </motion.a>

@@ -1,47 +1,53 @@
 ---
 import { ModeToggle } from "../react/index";
-import { ShinyText } from "../react/react-bits/";
 import { Button } from "../ui/button";
-import { Item } from "../ui/item";
 import { Link } from "../ui/link";
-
-
+import {motion, scale} from 'framer-motion'
 
 ---
 
-  <header class="flex items-center justify-between px-6 py-4 max-w-[1200px] mx-auto mt-8 rounded-full backdrop:shadow-2xl dark:shadow-none z-50">
-      <nav class="w-full flex justify-between items-center z-10 ">
-        <div class="flex items-center gap-3 ">
-          <Button
-            variant="outline"
-            className="px-4 uppercase py-2 rounded-full text-neutral-900  dark:text-neutral-100 dark:hover:bg-neutral-800 transition"
-          >
-            <Link className="text-inherit" href="#inicio">
-              início
-            </Link>
-          </Button>
-          <Button
-            variant="outline"
-            className="px-4 uppercase py-2 rounded-full text-neutral-900 hover:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-800 transition"
-          >
-            <Link className="text-inherit" href="#sobre">
-              sobre
-            </Link>
-          </Button>
-        </div>
+  <header class="fixed top-0 left-0 right-0 z-50  backdrop-blur-md shadow-md w-full">
+    <div class="flex items-center justify-between px-6 py-4 max-w-[1200px] mx-auto rounded">
+      {/* LOGO */}
+      <div class="flex items-center gap-2">
+        <Link href="#inicio" className="font-bold text-lg text-neutral-900 dark:text-neutral-100">
+          <motion.img whileHover={{scale: 1.1}} client:visible src="/favicon.svg" alt="asa" className="w-8 h-8">
+        </Link>
+      </div>
 
-        <div class="flex items-center gap-3">
-      
-              <Button
-            variant="outline"
-            className="px-4 uppercase py-2 rounded-full text-neutral-900  dark:text-neutral-100 dark:hover:bg-neutral-800 transition"
+      {/* NAV LINKS */}
+      <nav class="flex items-center gap-4 font-inter">
+        <Link className="text-inherit cursor-pointer" href="#inicio">
+          <Button
+            variant="ghost"
+            className="px-4 font-inter font-light text-lg py-2 rounded text-neutral-900 dark:text-neutral-100 dark:hover:bg-neutral-800 transition cursor-pointer"
           >
-            <Link className="text-inherit" href="#projetos">
-              projetos
-            </Link>
+            Início
           </Button>
-          <ModeToggle client:load />
-        </div>
+        </Link>
+
+        <Link className="text-inherit" href="#sobre">
+          <Button
+            variant="ghost"
+            className="px-4 py-2 font-inter font-light text-lg rounded cursor-pointer text-neutral-900 hover:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-800 transition"
+          >
+            Sobre
+          </Button>
+        </Link>
+
+        <Link className="text-inherit" href="#projetos">
+          <Button
+            variant="ghost"
+            className="px-4 py-2 font-inter font-light text-lg rounded cursor-pointer text-neutral-900 hover:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-800 transition"
+          >
+            Projetos
+          </Button>
+        </Link>
       </nav>
-    </header>
 
+      {/* DARK MODE TOGGLE */}
+      <div>
+        <ModeToggle client:load />
+      </div>
+    </div>
+</header>
