@@ -11,7 +11,7 @@ export function GradientText({
   children,
   className = "",
   colors = ["#ffaa40", "#9c40ff", "#ffaa40"],
-  animationSpeed = 3,
+  animationSpeed = 1,
 }: GradientTextProps) {
   const gradientStyle = {
     backgroundImage: `linear-gradient(to right, ${colors.join(", ")})`,
