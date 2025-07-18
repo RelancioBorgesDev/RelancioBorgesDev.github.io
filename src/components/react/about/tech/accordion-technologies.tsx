@@ -1,137 +1,74 @@
+import { Accordion } from "@/components/ui/accordion";
+import { TechAccordionSection } from "./tech-accordion-section";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
-  Box,
-  BriefcaseBusiness,
-  Cloud,
-  Code,
-  Database,
-  Download,
-  FileCode,
-  GitBranch,
-  Globe,
-  GraduationCap,
-  Layers,
-  Palette,
-  Server,
-  Settings,
-  Smartphone,
-  Terminal,
-  Verified,
-  Zap,
-} from "lucide-react";
+  frontendTechs,
+  backendTechs,
+  devOpsTechs,
+  toolsTechs,
+} from "@/utils/techs";
+import { Container, Proportions, Server, ToolCase } from "lucide-react";
+
+// Importa certificados (mock)
+import certificadoFrontend from "@/assets/certificados/certificado0.png";
+import certificadoBackend from "@/assets/certificados/certificado1.png";
+import certificadoDevOps from "@/assets/certificados/certificado10.png";
 
 export function AccordionTechnologies() {
   return (
-    <Accordion type="single" collapsible className="w-full">
-      <AccordionItem value="frontend" className="border-b border-gray-200 w-full">
-        <AccordionTrigger className="block text-left hover:no-underline py-4 w-full">
-          <div className="text-gray-900 font-medium">Frontend Development</div>
-        </AccordionTrigger>
-        <AccordionContent className="pb-4 w-full">
-          <div className="space-y-4">
-            <p className="text-gray-700 text-sm leading-relaxed">
-              I specialize in creating modern, responsive user interfaces with a
-              focus on performance and user experience. My expertise spans from
-              component-based architectures to state management and styling
-              solutions.
-            </p>
-            <div className="relative overflow-hidden w-full">
-              <div className="flex animate-scroll-left space-x-3">
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer border border-gray-200 whitespace-nowrap">
-                  <FileCode className="h-4 w-4 text-orange-600" />
-                  <span className="text-sm font-medium text-gray-900">
-                    HTML5
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer border border-gray-200 whitespace-nowrap">
-                  <Palette className="h-4 w-4 text-blue-600" />
-                  <span className="text-sm font-medium text-gray-900">
-                    CSS3
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer border border-gray-200 whitespace-nowrap">
-                  <Code className="h-4 w-4 text-yellow-600" />
-                  <span className="text-sm font-medium text-gray-900">
-                    JavaScript
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer border border-gray-200 whitespace-nowrap">
-                  <Code className="h-4 w-4 text-blue-700" />
-                  <span className="text-sm font-medium text-gray-900">
-                    TypeScript
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer border border-gray-200 whitespace-nowrap">
-                  <Code className="h-4 w-4 text-blue-600" />
-                  <span className="text-sm font-medium text-gray-900">
-                    React
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer border border-gray-200 whitespace-nowrap">
-                  <Globe className="h-4 w-4 text-gray-600" />
-                  <span className="text-sm font-medium text-gray-900">
-                    Next.js
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer border border-gray-200 whitespace-nowrap">
-                  <Code className="h-4 w-4 text-green-600" />
-                  <span className="text-sm font-medium text-gray-900">
-                    Vue.js
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer border border-gray-200 whitespace-nowrap">
-                  <Palette className="h-4 w-4 text-cyan-600" />
-                  <span className="text-sm font-medium text-gray-900">
-                    Tailwind
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer border border-gray-200 whitespace-nowrap">
-                  <Palette className="h-4 w-4 text-pink-600" />
-                  <span className="text-sm font-medium text-gray-900">
-                    Sass
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer border border-gray-200 whitespace-nowrap">
-                  <Palette className="h-4 w-4 text-purple-600" />
-                  <span className="text-sm font-medium text-gray-900">
-                    Bootstrap
-                  </span>
-                </div>
-                {/* Duplicate items for seamless loop */}
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer border border-gray-200 whitespace-nowrap">
-                  <FileCode className="h-4 w-4 text-orange-600" />
-                  <span className="text-sm font-medium text-gray-900">
-                    HTML5
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer border border-gray-200 whitespace-nowrap">
-                  <Palette className="h-4 w-4 text-blue-600" />
-                  <span className="text-sm font-medium text-gray-900">
-                    CSS3
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer border border-gray-200 whitespace-nowrap">
-                  <Code className="h-4 w-4 text-yellow-600" />
-                  <span className="text-sm font-medium text-gray-900">
-                    JavaScript
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer border border-gray-200 whitespace-nowrap">
-                  <Code className="h-4 w-4 text-blue-700" />
-                  <span className="text-sm font-medium text-gray-900">
-                    TypeScript
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </AccordionContent>
-      </AccordionItem>
+    <Accordion
+      type="single"
+      collapsible
+      className="cursor-pointer flex flex-col gap-3"
+    >
+      <TechAccordionSection
+        value="frontend"
+        triggerIcon={Proportions}
+        title="Frontend"
+        description="I specialize in creating modern, responsive user interfaces with a focus on performance and user experience. My expertise spans from component-based architectures to state management and styling solutions."
+        techs={frontendTechs}
+        certificates={[
+          {
+            label: "Certificados Frontend",
+            images: [certificadoFrontend.src],
+          },
+        ]}
+      />
+
+      <TechAccordionSection
+        value="backend"
+        triggerIcon={Server}
+        title="Backend"
+        description="I excel at designing and building robust, scalable backend systems, from RESTful APIs to real-time communication and database optimization."
+        techs={backendTechs}
+        certificates={[
+          {
+            label: "Certificados Backend",
+            images: [certificadoBackend.src, certificadoDevOps.src],
+          },
+        ]}
+      />
+
+      <TechAccordionSection
+        value="devops"
+        triggerIcon={Container}
+        title="DevOps"
+        description="I have experience with containerization, CI/CD pipelines, infrastructure as code, and monitoring tools to ensure reliable deployments."
+        techs={devOpsTechs}
+        certificates={[
+          {
+            label: "Certificados DevOps",
+            images: [certificadoDevOps.src],
+          },
+        ]}
+      />
+
+      <TechAccordionSection
+        value="tools"
+        triggerIcon={ToolCase}
+        title="Ferramentas"
+        description="These are the tools and platforms I use daily to streamline development workflows, improve productivity, and ensure project quality."
+        techs={toolsTechs}
+      />
     </Accordion>
   );
 }

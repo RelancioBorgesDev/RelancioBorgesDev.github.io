@@ -84,7 +84,7 @@ const experienceItems = [
                     label="Diploma"
                     images={[certificado0.src]}
                   >
-                    <GraduationCap />
+                    <GiDiploma className="text-blue-950" size={22}/>
                   </CertificateTooltip>
               </div>
               <p class="text-gray-600">Engenharia de Computação</p>
@@ -93,12 +93,10 @@ const experienceItems = [
           </ul>
         </article>
 
-        <article>
+        <article class="w-full">
           <SectionTitle icon={Code} title="Tecnologias"/>
-          <div class="grid grid-cols-2 gap-8">
-            <section class="w-full">
-              <AccordionTechnologies client:load/>
-            </section>
+          <div class="gap-8 w-full">
+            <AccordionTechnologies client:load/>
           </div>
         </article>
       </section>

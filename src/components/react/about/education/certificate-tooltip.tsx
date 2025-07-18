@@ -64,7 +64,7 @@ export function CertificateTooltip({
               className="w-[800px] h-[800px] object-contain rounded-lg"
             />
           ) : (
-            <Carousel className="w-full h-full">
+            <Carousel className="w-[800px] h-[800px] relative">
               <CarouselContent className="h-full">
                 {images.map((image, index) => (
                   <CarouselItem
@@ -74,13 +74,15 @@ export function CertificateTooltip({
                     <img
                       src={image}
                       alt={`Certificado ${index + 1}`}
-                      className="w-full h-full object-contain rounded-lg"
+                      className="w-[800px] h-[800px] object-contain rounded-xl shadow"
                     />
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+
+              {/* Botões de navegação */}
+              <CarouselPrevious className="absolute cursor-pointer left-4 top-1/2 -translate-y-1/2 z-10 rounded-full transition" />
+              <CarouselNext className="absolute cursor-pointer right-4 top-1/2 -translate-y-1/2 z-10 rounded-full  transition" />
             </Carousel>
           )}
         </DialogContent>
