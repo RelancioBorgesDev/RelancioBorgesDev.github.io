@@ -1,16 +1,20 @@
-import { Github, Linkedin } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const socials = [
   {
     name: "GitHub",
     href: "https://github.com/seu-usuario",
-    icon: Github,
+    icon: FaGithub,
+    white_mode: "black",
+    dark_mode: "white",
   },
   {
     name: "LinkedIn",
     href: "https://linkedin.com/in/seu-usuario",
-    icon: Linkedin,
+    icon: FaLinkedin,
+    white_mode: "blue-500",
+    dark_mode: "blue-400",
   },
 ];
 
@@ -30,9 +34,9 @@ export function SocialDock() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1, type: "spring", stiffness: 300 }}
-            className="p-2 text-white rounded-full shadow-lg hover:border-2"
+            className={`p-2 dark:text-${social.dark_mode}  text-${social.white_mode} rounded-full `}
           >
-            <social.icon className="w-5 h-5" />
+            <social.icon className="w-6 h-6" />
           </motion.a>
         ))}
       </div>

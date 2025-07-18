@@ -1,0 +1,163 @@
+---
+import { Box, BriefcaseBusiness, Cloud, Code, Database, Download, GitBranch, Globe, GraduationCap, Layers, Palette, Server, Settings, Terminal, Verified } from "lucide-react";
+import { GiDiploma } from "react-icons/gi";
+import { AccordionExperience } from "../react/about/experience/accordion-experience";
+import { SectionTitle } from '@/components/react/about/section-title'
+import { CertificateTooltip } from '@/components/react/about/education/certificate-tooltip'
+import { AccordionTechnologies } from '@/components/react/about/tech/accordion-technologies'
+
+import certificado0 from "../../assets/certificados/certificado0.png";
+
+
+
+const experienceItems = [
+  {
+    value: "item-1",
+    title: "Senior Full Stack Developer",
+    content: "Leading a team of developers and architecting modern web solutions.",
+  },
+  {
+    value: "item-2",
+    title: "Full Stack Developer",
+    content: "Developed and maintained multiple client projects with React and Node.js.",
+  },
+];
+---
+
+<section id="sobre" class="h-full dark:bg-[#F5F5F5] bg-neutral-100 rounded-lg z-20 shadow-2xl backdrop:shadow-2xl mt-16 mx-4">
+  <main class="z-20 py-16 px-4 md:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-3 gap-16">
+      
+      <!-- Left Column - Introduction -->
+      <header class="space-y-8">
+        <div>
+          <h1 class="text-4xl font-light text-gray-900 mb-2">Hi!</h1>
+          <p class="text-lg text-gray-900 leading-relaxed">
+            I'm <span class="italic">Sarah</span> <span class="font-light">Johnson</span>,<br />
+            a full-stack developer<br />
+            based in San Francisco.
+          </p>
+        </div>
+
+        <figure class="w-64 h-80 bg-gray-100 rounded-lg overflow-hidden">
+          <img
+            src="/placeholder.svg?height=320&width=256"
+            alt="Relancio Borges"
+            width={256}
+            height={320}
+            class="w-full h-full object-cover"
+          />
+        </figure>
+
+        <section class="space-y-4">
+          <p class="text-gray-700 leading-relaxed">
+            Trabalho com tecnologia há mais de 5 anos e nesse tempo aprendi que código limpo e boas práticas fazem toda a diferença. Já participei de projetos incríveis construindo sistemas web, APIs, integrações com IA e soluções pensadas para escala e performance.
+          </p>
+          <p class="text-gray-700 italic leading-relaxed">
+            Sou apaixonado por tecnologias modernas, arquitetura limpa e adoro criar aplicações que além de funcionais, sejam fáceis de manter e evoluir. Também curto trabalhar com Docker, Kubernetes e tudo que envolve automação e DevOps.
+          </p>
+      
+        </section>
+      </header>
+
+      <!-- Middle Column - Experience & Skills -->
+      <section class="space-y-12" aria-labelledby="experience-education">
+        <article>
+          <SectionTitle icon={BriefcaseBusiness} title="Experiência"/>
+          <AccordionExperience 
+            items={experienceItems}
+            type="single"
+            collapsible={true}
+            className="w-full text-neutral-600"
+            client:load 
+          />
+        </article>
+
+        <article>
+          <SectionTitle icon={GraduationCap} title="Educação"/>
+          <ul class="space-y-4">
+            <li>
+              <div class="flex items-center gap-32">
+                <h3 class="text-gray-900 font-medium">Bacharelado</h3>
+                  <CertificateTooltip
+                    client:load
+                    label="Diploma"
+                    images={[certificado0.src]}
+                  >
+                    <GraduationCap />
+                  </CertificateTooltip>
+              </div>
+              <p class="text-gray-600">Engenharia de Computação</p>
+              <p class="text-gray-600">Universidade de Taubaté | 2020-2024</p>
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <SectionTitle icon={Code} title="Tecnologias"/>
+          <div class="grid grid-cols-2 gap-8">
+            <section class="w-full">
+              <AccordionTechnologies client:load/>
+            </section>
+          </div>
+        </article>
+      </section>
+
+      <!-- Right Column - Contact & Stats -->
+      <aside class="space-y-12">
+        <section>
+          <h2 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-6">
+            Let's talk and coffee
+          </h2>
+          <address class="not-italic space-y-2">
+            <p class="text-gray-900">sarah.johnson@gmail.com</p>
+            <p class="text-gray-600">+1 (555) 123-4567</p>
+          </address>
+        </section>
+
+        <nav aria-label="Social Media">
+          <h2 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-6">Follow me :)</h2>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-900">LinkedIn</a></li>
+            <li><a href="#" class="text-gray-900">GitHub</a></li>
+            <li><a href="#" class="text-gray-900">Twitter</a></li>
+            <li><a href="#" class="text-gray-900">Behance</a></li>
+          </ul>
+        </nav>
+
+        <section>
+          <h2 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-6">Stats</h2>
+          <ul class="space-y-2">
+            <li class="text-gray-900">50+ Projects Completed</li>
+            <li class="text-gray-900">5+ Years Experience</li>
+            <li class="text-gray-900">20+ Happy Clients</li>
+            <li class="text-gray-900">∞ Cups of Coffee</li>
+          </ul>
+        </section>
+
+        <footer>
+          <h2 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-6">Notes</h2>
+          <ul class="space-y-4 text-sm text-gray-700">
+            <li>| The best strategy for problems resolution is creativity;</li>
+            <li>| Organization, resilience and persistence are the base of a good work;</li>
+            <li>| The best collections are the ones with nice references and nice people;</li>
+            <li>| To search: Love as a revolutionary act;</li>
+          </ul>
+
+          
+        </footer>
+          <a
+            href="/curriculo.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+            class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition-colors"
+          >
+            <Download size={20}/>
+            Baixar Currículo
+          </a>
+      </aside>
+
+    </div>
+  </main>
+</section>
