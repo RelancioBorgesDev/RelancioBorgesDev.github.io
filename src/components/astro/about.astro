@@ -1,12 +1,17 @@
 ---
-import { Box, BriefcaseBusiness, Cloud, Code, Database, Download, GitBranch, Globe, GraduationCap, Layers, Palette, Server, Settings, Terminal, Verified } from "lucide-react";
+import { Box, BriefcaseBusiness, Cloud, Code, Coffee, Database, Download, GitBranch, Globe, GraduationCap, Layers, Mail, Medal, Palette, Server, Settings, Terminal, UserPlus, Verified } from "lucide-react";
 import { GiDiploma } from "react-icons/gi";
 import { AccordionExperience } from "../react/about/experience/accordion-experience";
 import { SectionTitle } from '@/components/react/about/section-title'
 import { CertificateTooltip } from '@/components/react/about/education/certificate-tooltip'
 import { AccordionTechnologies } from '@/components/react/about/tech/accordion-technologies'
+import { Achievements } from '@/components/react/about/achievements/achievements'
+
 
 import certificado0 from "../../assets/certificados/certificado0.png";
+import { FaCertificate, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
+import { Button } from "../ui/button";
 
 
 
@@ -101,60 +106,80 @@ const experienceItems = [
         </article>
       </section>
 
-      <!-- Right Column - Contact & Stats -->
-      <aside class="space-y-12">
-        <section>
-          <h2 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-6">
-            Let's talk and coffee
-          </h2>
-          <address class="not-italic space-y-2">
-            <p class="text-gray-900">sarah.johnson@gmail.com</p>
-            <p class="text-gray-600">+1 (555) 123-4567</p>
-          </address>
-        </section>
+    <!-- Right Column - Contact & Achievements -->
+  <aside class="space-y-8">
+      {/* Contato */}
+      <section>
+        <h2 class="text-sm text-gray-500 uppercase tracking-wider mb-4 flex items-center gap-2 font-bold">
+          <Coffee /> Vamos conversar? 
+        </h2>
+        <address class="not-italic space-y-2 ">
+          <p class="text-gray-900 font-medium flex items-center gap-2 cursor-pointer hover:fill-gray-900 "> 
+            relancio.dev@gmail.com
+          </p>
+        </address>
+      </section>
 
-        <nav aria-label="Social Media">
-          <h2 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-6">Follow me :)</h2>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-gray-900">LinkedIn</a></li>
-            <li><a href="#" class="text-gray-900">GitHub</a></li>
-            <li><a href="#" class="text-gray-900">Twitter</a></li>
-            <li><a href="#" class="text-gray-900">Behance</a></li>
-          </ul>
-        </nav>
+      {/* Redes Sociais */}
+      <nav aria-label="Redes Sociais">
+        <h2 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4 flex items-center gap-2">
+          <UserPlus /> Siga-me
+        </h2>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="https://linkedin.com/in/seu-usuario"
+              class="flex items-center gap-2 text-gray-900 hover:text-blue-600 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin size={18} /> LinkedIn
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/seu-usuario"
+              class="flex items-center gap-2 text-gray-900 hover:text-gray-800 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub size={18} /> GitHub
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-        <section>
-          <h2 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-6">Stats</h2>
-          <ul class="space-y-2">
-            <li class="text-gray-900">50+ Projects Completed</li>
-            <li class="text-gray-900">5+ Years Experience</li>
-            <li class="text-gray-900">20+ Happy Clients</li>
-            <li class="text-gray-900">∞ Cups of Coffee</li>
-          </ul>
-        </section>
+      {/* Conquistas */}
+      <Achievements client:visible/>
 
-        <footer>
-          <h2 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-6">Notes</h2>
-          <ul class="space-y-4 text-sm text-gray-700">
-            <li>| The best strategy for problems resolution is creativity;</li>
-            <li>| Organization, resilience and persistence are the base of a good work;</li>
-            <li>| The best collections are the ones with nice references and nice people;</li>
-            <li>| To search: Love as a revolutionary act;</li>
-          </ul>
+      {/* Notas e Frases */}
+      <footer class="space-y-2 mt-5">
+        <h2 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">
+          Notas
+        </h2>
+        <ul class="space-y-3 text-sm text-gray-700">
+          <li>| Criatividade é a melhor estratégia para resolver problemas.</li>
+          <li>| Organização, resiliência e persistência são a base de um bom trabalho.</li>
+          <li>| Boas conexões geram os melhores projetos.</li>
+          <li>| Buscar sempre: amor como ato revolucionário.</li>
+        </ul>
+      </footer>
 
-          
-        </footer>
-          <a
-            href="/curriculo.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            download
-            class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition-colors"
-          >
-            <Download size={20}/>
-            Baixar Currículo
-          </a>
-      </aside>
+      {/* Botão de Currículo */}
+      <div>
+        <a
+          href="/curriculo.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          download
+          class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition-colors"
+        >
+          <Download size={20} />
+          Baixar Currículo
+        </a>
+      </div>
+  </aside>
+
 
     </div>
   </main>
