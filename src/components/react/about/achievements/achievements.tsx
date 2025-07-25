@@ -1,17 +1,14 @@
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Medal } from "lucide-react";
-import React from "react";
-import { FaCertificate } from "react-icons/fa";
+import { FcDiploma1 } from "react-icons/fc";
 
 export function Achievements() {
   return (
@@ -26,9 +23,9 @@ export function Achievements() {
 
       {/* Botão com modal */}
       <Dialog>
-        <DialogTrigger asChild>
+        <DialogTrigger asChild className="cursor-pointer">
           <Button variant="default" className="mt-3 gap-2 text-sm">
-            <FaCertificate size={16} className="text-blue-500" />
+            <FcDiploma1 size={16} className="text-blue-500" />
             Ver Certificados
           </Button>
         </DialogTrigger>
@@ -44,11 +41,6 @@ export function Achievements() {
             <p>📜 Certificado Desenvolvedor do Ano - 2024</p>
             <p>📜 Certificado Hackathon Nacional - 1º Lugar</p>
           </div>
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button variant="secondary">Fechar</Button>
-            </DialogClose>
-          </DialogFooter>
         </DialogContent>
       </Dialog>
     </section>
