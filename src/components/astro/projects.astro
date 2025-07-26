@@ -1,44 +1,21 @@
 ---
+import { getCollection } from 'astro:content';
+import { ProjectsSection } from '@/components/react/projects/project-section';
 import GithubAnalytics from '../../assets/user_auth/GithubAnalytics.png';
-import { ProjectCard } from '../react/projects/project-card';
-import { TextType } from '@/components/react/react-bits/text-type';
-import { Filters } from '../react/projects/filters';
-import { FaNodeJs, FaReact } from 'react-icons/fa';
 
-
-const projects = [
-  {
-    title: "Code Screenshot",
-    categories: ["Development", "Design"],
-    year: "2024",
-    image: GithubAnalytics,
-    langs: [
-      { icon: FaReact, lang: "React" },
-      { icon: FaNodeJs, lang: "Node.js" },
-    ],
-  },
-];
-
-let selectedCategory = 'All';
+const collection = await getCollection('projects');
+const projects = collection.map((entry) => ({
+  slug: entry.slug,
+  title: entry.data.title,
+  categories: entry.data.categories,
+  year: entry.data.year,
+  image: GithubAnalytics, 
+  langs: entry.data.langs.map(({ lang }) => ({
+    lang,
+  })),
+}));
 ---
 
-<section class="text-white min-h-screen px-8 py-16">
-  <div class="flex items-center justify-between gap-6 mb-10 max-lg:flex-col">
-    <h1>
-        <TextType client:visible text={"Meus Projetos."} className='text-5xl font-bold font-permanent text-neutral-950'/>
-    </h1>
-    <Filters client:visible/>
-  </div>
-
-  <div class="grid md:grid-cols-2 gap-12 ">
-    {projects
-      .filter(p => selectedCategory === 'All' || p.categories.includes(selectedCategory))
-      .map(project => (
-        <ProjectCard project={project} />
-        <ProjectCard project={project} />
-        <ProjectCard project={project} />
-        <ProjectCard project={project} />
-        <ProjectCard project={project} />
-      ))}
-  </div>
+<section class="min-h-screen px-8 py-16 text-white">
+  <ProjectsSection client:visible projects={projects} />
 </section>

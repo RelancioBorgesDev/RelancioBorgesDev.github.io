@@ -5,7 +5,7 @@ interface CardHeaderProps {
 
 export function CardHeader({ image, title }: CardHeaderProps) {
   return (
-    <header className="p-6 bg-neutral-300/5 rounded-t-3xl">
+    <header className="p-6 dark:bg-neutral-300/5 bg-neutral-900/5 rounded-t-3xl">
       <img
         src={image}
         alt={title}

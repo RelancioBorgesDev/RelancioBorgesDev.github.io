@@ -41,7 +41,11 @@ const allProjects = [
 const topics = ["Front End", "Back End", "FullStack", "DevOps"];
 const languages = ["React", "Node.js", "Tailwind", "HTML", "CSS", "PostgreSQL"];
 
-export function Filters() {
+type FiltersProps = {
+  onChangeCategory: (cat: string) => void;
+};
+
+export function Filters({ onChangeCategory }: FiltersProps) {
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
 

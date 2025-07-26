@@ -2,7 +2,6 @@ import { Badge } from "@/components/ui/badge";
 import type { ElementType } from "react";
 
 export type Langs = {
-  icon: ElementType;
   lang: string;
 };
 
@@ -20,7 +19,7 @@ export function CardFooter({
   categories,
 }: CardFooterProps) {
   return (
-    <footer className="flex max-sm:flex-col max-sm:gap-4 justify-between p-4 font-inter rounded-b-3xl bg-neutral-300/5">
+    <footer className="flex max-sm:flex-col max-sm:gap-4 justify-between p-4 font-inter rounded-b-3xl dark:bg-neutral-300/5 bg-neutral-900/5 ">
       <div className="flex flex-col gap-1 max-sm:flex-row max-sm:justify-between">
         <h3 className="text-xl font-bold text-black dark:text-white">
           {title}
@@ -35,13 +34,12 @@ export function CardFooter({
           {year}
         </p>
         <div className="flex flex-wrap gap-2 items-end justify-end">
-          {langs.map(({ icon: Icon, lang }, index) => (
+          {langs.map(({ lang }, index) => (
             <Badge
               key={index}
               variant="outline"
               className="hover:bg-primary/5 border-0 bg-neutral-400/20 dark:bg-neutral-600 text-neutral-600 dark:text-neutral-300 text-sm rounded-2xl inline-flex items-center gap-1"
             >
-              <Icon />
               <span>{lang}</span>
             </Badge>
           ))}

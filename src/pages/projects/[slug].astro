@@ -1,0 +1,80 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { Button } from '@/components/ui/button';
+import { ChevronLeft } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Image } from 'astro:assets';
+import { Separator } from "@/components/ui/separator"
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((entry) => ({
+    params: { slug: entry.slug },  
+  }));
+}
+
+const { slug } = Astro.params;
+const entry = await getEntry('projects', slug);
+
+if (!entry) {
+  throw new Error(`Projeto "${slug}" não encontrado`);
+}
+
+const { Content } = await entry.render();
+const { data } = entry;
+const { title, categories, image, langs, year, description } = data
+
+---
+<Layout>
+  <main class="text-foreground p-8 mx-auto space-y-8 flex  flex-col justify-center mt-[72px] max-w-5xl">
+    <section class="flex flex-col gap-4">
+      <header class="w-full flex items-center justify-between ">
+        <Button variant={"ghost"} className='hover:bg-transparent hover:motion-text-' client:visible>
+          <a href="/" class="flex items-center gap-2">
+            <ChevronLeft/>
+            <span class="text-md font-bold">Voltar para o inicio</span>
+          </a>
+        </Button>
+        <div class="flex flex-col-reverse justify-end items-end">
+          <Badge variant={"outline"} className='text-sm border-0 font-medium text-neutral-950 dark:text-neutral-200 border-neutral-950 dark:border-neutral-200 py-1 px-2 rounded-xs'
+            >
+            {year}
+          </Badge>
+          <div >
+            <p class="italic">{categories.join(' & ')}</p>
+          </div>
+        </div>
+      </header>
+
+      <picture class="mt-2">
+        <Image src={image} alt="Hero image" class="rounded-2xl shadow-2xl backdrop:shadow-2xl"/>
+      </picture>
+
+      <div class="py-4 flex flex-col gap-4 ">
+        <div class="py-4 flex flex-col gap-4 text-neutral-950 dark:text-neutral-50">
+            <h1 class="font-inter text-5xl font-bold tracking-tight">{title}</h1>
+            <p class="sm:w-full font-light">{description}</p>
+        </div>
+        <div class="flex gap-4">
+          {langs.map(({lang}) => (
+            <span class="bg-neutral-950/75 dark:bg-neutral-100 dark:text-neutral-950 text-white font-semibold py-1 px-4 rounded-xl hover:brightness-110">{lang}</span>
+          ))}
+        </div>
+      </div>
+      <Separator className="text-white"/> 
+    </section>
+    <article class="prose dark:prose-invert max-w-none 
+               [&_pre]:bg-neutral-900 
+               [&_pre]:text-neutral-100 
+               [&_pre]:p-4 
+               [&_pre]:rounded-xl 
+               [&_pre]:overflow-x-auto 
+               [&_code]:text-blue-100">
+      <Content/>
+    </article>
+  </main>
+  
+</Layout>
+
+
