@@ -1,33 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { ShinyText, GradientText, RotatingText, Squares } from '../components/react/react-bits/index'
-import { ModeToggle } from '@/components/react';
-import "../styles/global.css";
 import Hero from '@/components/astro/hero.astro';
 import About from '@/components/astro/about.astro';
 import Projects from '@/components/astro/projects.astro';
 
 import { SocialDock } from '@/components/react/social-dock';
 ---
-<!-- Script for dark mode -->
-<script is:inline>
-	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
-		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
- 
-	if (typeof localStorage !== 'undefined') {
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-	}
-</script>
 
 <Layout>
 	<main class="z-10">
