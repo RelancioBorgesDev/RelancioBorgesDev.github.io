@@ -7,15 +7,15 @@ import {motion} from 'framer-motion'
 
   <section
     id="inicio"
-    class="relative flex flex-col items-center min-h-[calc(100vh-120px)] text-neutral-900 dark:text-neutral-100 px-6"
+    class="relative flex flex-col justify-center items-center min-h-[calc(100vh-120px)] text-neutral-900 dark:text-neutral-100 px-6"
   >
-    <div class="text-center z-10 space-y-6 text-neutral-900 font-inter mt-52 flex flex-col gap-4">
+    <div class="text-center z-10 space-y-6 text-neutral-900 font-inter flex flex-col gap-4">
       <motion.p 
         client:visible
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="font-bold font-permanent text-5xl md:text-9xl text-shadow-2xs tracking-tight leading-tight italic text-neutral-900 dark:text-neutral-200"
+        className="font-bold font-permanent max-lg:text-6xl text-9xl text-shadow-2xs tracking-tight leading-tight italic text-neutral-900 dark:text-neutral-200"
       >
         relancio borges.
       </motion.p>
@@ -63,7 +63,7 @@ import {motion} from 'framer-motion'
         y: { duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.8 },
         rotate: { duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }
       }} 
-      className="absolute bottom-15"
+      className="absolute bottom-15 max-sm:bottom-0"
     >
       <ChevronDown size={44}/>
     </motion.div>
