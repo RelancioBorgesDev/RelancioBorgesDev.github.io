@@ -10,14 +10,14 @@ import {motion, scale} from 'framer-motion'
     <div class="flex items-center justify-between px-6 py-4 max-w-[1200px] mx-auto rounded">
       {/* LOGO */}
       <div class="flex items-center gap-2">
-        <Link href="#inicio" className="font-bold text-lg text-neutral-900 dark:text-neutral-100">
+        <Link href="/" className="font-bold text-lg text-neutral-900 dark:text-neutral-100">
           <motion.img whileHover={{scale: 1.1}} client:visible src="/favicon.svg" alt="asa" className="w-8 h-8">
         </Link>
       </div>
 
       {/* NAV LINKS */}
       <nav class="flex items-center gap-4 font-inter">
-        <Link className="text-inherit cursor-pointer" href="#inicio">
+        <Link className="text-inherit cursor-pointer" href="/#home">
           <Button
             variant="ghost"
             className="px-4 font-inter font-light text-lg py-2 rounded text-neutral-900 dark:text-neutral-100 dark:hover:bg-neutral-800 transition cursor-pointer"
@@ -25,8 +25,7 @@ import {motion, scale} from 'framer-motion'
             Início
           </Button>
         </Link>
-
-        <Link className="text-inherit" href="#sobre">
+        <Link className="text-inherit" href="/#about">
           <Button
             variant="ghost"
             className="px-4 py-2 font-inter font-light text-lg rounded cursor-pointer text-neutral-900 hover:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-800 transition"
@@ -34,8 +33,7 @@ import {motion, scale} from 'framer-motion'
             Sobre
           </Button>
         </Link>
-
-        <Link className="text-inherit" href="#projetos">
+        <Link className="text-inherit" href="/#projects">
           <Button
             variant="ghost"
             className="px-4 py-2 font-inter font-light text-lg rounded cursor-pointer text-neutral-900 hover:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-800 transition"
@@ -45,7 +43,6 @@ import {motion, scale} from 'framer-motion'
         </Link>
       </nav>
 
-      {/* DARK MODE TOGGLE */}
       <div>
         <ModeToggle client:load />
       </div>
