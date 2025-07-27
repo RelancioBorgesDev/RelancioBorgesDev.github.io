@@ -2,19 +2,13 @@
 import { getCollection, getEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Image } from 'astro:assets';
-import { Separator } from "@/components/ui/separator"
-
-export async function getStaticPaths() {
-  const projects = await getCollection('projects');
-  return projects.map((entry) => ({
-    params: { slug: entry.slug },  
-  }));
-}
+import { Separator } from "@/components/ui/separator";
 
 const { slug } = Astro.params;
+
 const entry = await getEntry('projects', slug);
 
 if (!entry) {
@@ -23,8 +17,28 @@ if (!entry) {
 
 const { Content } = await entry.render();
 const { data } = entry;
-const { title, categories, image, langs, year, description } = data
+const { title, categories, image, langs, year, description } = data;
 
+const allProjects = await getCollection('projects');
+
+const sortedProjects = allProjects.sort((a, b) => parseInt(b.data.year) - parseInt(a.data.year));
+
+const currentIndex = sortedProjects.findIndex(p => p.slug === slug);
+const previousProject = sortedProjects[currentIndex - 1] ?? null;
+const nextProject = sortedProjects[currentIndex + 1] ?? null;
+
+const previousTitle = previousProject?.data.title;
+const previousSlug = previousProject?.slug;
+
+const nextTitle = nextProject?.data.title;
+const nextSlug = nextProject?.slug;
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((entry) => ({
+    params: { slug: entry.slug },
+  }));
+}
 ---
 <Layout>
   <main class="text-foreground p-8 mx-auto space-y-8 flex  flex-col justify-center mt-[72px] max-w-5xl">
@@ -64,15 +78,69 @@ const { title, categories, image, langs, year, description } = data
       </div>
       <Separator className="text-white"/> 
     </section>
-    <article class="prose dark:prose-invert max-w-none 
-               [&_pre]:bg-neutral-900 
-               [&_pre]:text-neutral-100 
-               [&_pre]:p-4 
-               [&_pre]:rounded-xl 
-               [&_pre]:overflow-x-auto 
-               [&_code]:text-blue-100">
-      <Content/>
+
+    <article
+      class="prose dark:prose-invert max-w-none
+        text-neutral-950 dark:text-neutral-200
+
+        [&_h1]:text-neutral-950 dark:[&_h1]:text-neutral-200
+        [&_h2]:text-neutral-950 dark:[&_h2]:text-neutral-200
+        [&_h3]:text-neutral-950 dark:[&_h3]:text-neutral-200
+        [&_h4]:text-neutral-950 dark:[&_h4]:text-neutral-200
+
+        [&_a]:text-blue-600 dark:[&_a]:text-blue-400
+        [&_a:hover]:underline
+
+        [&_strong]:text-neutral-900 dark:[&_strong]:text-neutral-100
+
+        [&_ul>li::marker]:text-neutral-600 dark:[&_ul>li::marker]:text-neutral-400
+        [&_ol>li::marker]:text-neutral-600 dark:[&_ol>li::marker]:text-neutral-400
+
+        [&_blockquote]:border-l-neutral-300 dark:[&_blockquote]:border-l-neutral-700
+        [&_blockquote]:text-neutral-700 dark:[&_blockquote]:text-neutral-300
+
+        [&_pre]:bg-neutral-100 dark:[&_pre]:bg-neutral-900
+        [&_pre]:text-neutral-800 dark:[&_pre]:text-neutral-100
+        [&_pre]:p-4
+        [&_pre]:rounded-xl
+        [&_pre]:overflow-x-auto
+
+        [&_code]:text-pink-600 dark:[&_code]:text-green-400
+        dark:[&_code]:bg-neutral-800
+        [&_code]:px-1 [&_code]:py-[0.2em]
+        [&_code]:rounded-md
+      "
+    >
+      <Content />
     </article>
+
+
+    <section class="flex items-center justify-between mt-8">
+      {previousProject ? (
+          <a href={`/projects/${previousSlug}`} class="flex items-center gap-8">
+            <Button variant="outline" className="py-8 px-2 flex justify-between cursor-pointer bg-neutral-200">
+                <ChevronLeft size={25}/>
+                <div class="flex flex-col justify-end items-end">
+                  <span class="text-bold text-xs text-neutral-400">Anterior</span>
+                  <span class="text-bold text-sm text-neutral-950 dark:text-neutral-100">{previousTitle}</span>
+                </div>
+            </Button>
+          </a>
+      ) : <div />}
+
+      {nextProject ? (
+          <a href={`/projects/${nextSlug}`} class="flex items-center gap-8">
+            <Button variant="outline" className="py-8 px-2 flex justify-between cursor-pointer bg-neutral-200">
+                <div class="flex flex-col items-start justify-start">
+                  <span class="text-bold text-xs text-neutral-400">Próximo</span>
+                  <span class="text-bold text-sm text-neutral-950 dark:text-neutral-100">{nextTitle}</span>
+                </div>
+                <ChevronRight size={25}/>
+            </Button>
+          </a>
+      ) : <div />}
+    </section>
+
   </main>
   
 </Layout>

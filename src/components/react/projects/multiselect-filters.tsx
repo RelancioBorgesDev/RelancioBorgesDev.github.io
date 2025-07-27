@@ -46,7 +46,7 @@ export function MultiSelectFilter({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] max-sm:w-full justify-between truncate overflow-hidden whitespace-nowrap text-neutral-950 dark:text-neutral-200"
+          className="w-[200px] max-sm:w-full bg-neutral-200 justify-between truncate overflow-hidden whitespace-nowrap text-neutral-950 dark:text-neutral-200"
           title={selected.join(", ")}
         >
           {selected.length > 0
@@ -58,9 +58,9 @@ export function MultiSelectFilter({
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0 max-sm:w-full">
-        <Command>
-          <CommandInput placeholder={`Buscar ${label.toLowerCase()}...`} />
-          <CommandGroup>
+        <Command className="bg-neutral-200 dark:bg-neutral-950">
+          <CommandInput  placeholder={`Buscar ${label.toLowerCase()}...`} />
+          <CommandGroup className="bg-neutral-200 dark:bg-neutral-950">
             {options.map((option) => (
               <CommandItem key={option} onSelect={() => toggleOption(option)}>
                 <div

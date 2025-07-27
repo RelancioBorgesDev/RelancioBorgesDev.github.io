@@ -60,7 +60,6 @@ export function Filters({ onChangeCategory }: FiltersProps) {
 
   return (
     <div className="p-8 space-y-6 max-lg:p-2 max-sm:w-full">
-      {/* Filtros (command) */}
       <div className="flex gap-4 max-sm:flex-col ">
         <MultiSelectFilter
           label="Tópicos"
