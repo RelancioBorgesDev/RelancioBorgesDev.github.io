@@ -7,9 +7,9 @@ import {motion} from 'framer-motion'
 
   <section
     id="home"
-    class="relative flex flex-col justify-center items-center min-h-[calc(100vh-120px)] text-neutral-900 dark:text-neutral-100 px-6"
+    class="relative flex flex-col justify-center items-center min-h-screen text-neutral-900 dark:text-neutral-100 px-6"
   >
-    <div class="text-center z-10 space-y-6 text-neutral-900 font-inter flex flex-col gap-4">
+    <div class="text-center z-10  text-neutral-900 font-inter flex flex-col gap-4">
       <motion.p 
         client:visible
         initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ import {motion} from 'framer-motion'
       </motion.p>
     </div>
     <WaveTechBackground client:load/>
-    <motion.div
+      <motion.div
       client:visible
       initial={{ opacity: 0, y: 20 }}
       animate={{ 
@@ -65,7 +65,9 @@ import {motion} from 'framer-motion'
       }} 
       className="absolute bottom-15 max-sm:bottom-0"
     >
+    <a href="#about">
       <ChevronDown size={44}/>
+    </a>
     </motion.div>
   </section>
 

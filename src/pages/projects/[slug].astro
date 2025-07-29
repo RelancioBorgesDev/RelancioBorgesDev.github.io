@@ -2,10 +2,12 @@
 import { getCollection, getEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Image } from 'astro:assets';
 import { Separator } from "@/components/ui/separator";
+
+import { ChevronLeft, ChevronRight, SquareArrowOutUpRight } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 
 const { slug } = Astro.params;
 
@@ -51,13 +53,10 @@ export async function getStaticPaths() {
           </a>
         </Button>
         <div class="flex flex-col-reverse justify-end items-end">
-          <Badge variant={"outline"} className='text-sm border-0 font-medium text-neutral-950 dark:text-neutral-200 border-neutral-950 dark:border-neutral-200 py-1 px-2 rounded-xs'
+          <Badge variant={"outline"} className='text-sm border-0 font-semibold text-neutral-950 dark:text-neutral-200 border-neutral-950 dark:border-neutral-200 py-1 px-2 rounded-xs'
             >
             {year}
           </Badge>
-          <div >
-            <p class="italic">{categories.join(' & ')}</p>
-          </div>
         </div>
       </header>
 
@@ -67,8 +66,31 @@ export async function getStaticPaths() {
 
       <div class="py-4 flex flex-col gap-4 ">
         <div class="py-4 flex flex-col gap-4 text-neutral-950 dark:text-neutral-50">
-            <h1 class="font-inter text-5xl font-bold tracking-tight">{title}</h1>
-            <p class="sm:w-full font-light">{description}</p>
+            <div class="w-full flex items-center justify-between gap-4 max-sm:flex-col max-sm:items-start max-sm:gap-5">
+              <h1 class="font-inter text-5xl font-bold tracking-tight">{title}</h1>
+              <div class="flex gap-2 items-center">
+                 <a   
+                  href="https://github.com/yourusername/yourrepo"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <span>
+                    <FaGithub size={25}/>
+                  </span>
+                </a>
+                <a   
+                  href="https://github.com/yourusername/yourrepo"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <span>
+                    <SquareArrowOutUpRight size={25}/>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="flex justify-between max-sm:flex-col max-sm:gap-5">
+              <p class="sm:w-2/3 font-light"> {description}</p>
+              <p class="italic">{categories.join(' & ')}</p>
+            </div>
         </div>
         <div class="flex gap-4">
           {langs.map(({lang}) => (
@@ -115,10 +137,10 @@ export async function getStaticPaths() {
     </article>
 
 
-    <section class="flex items-center justify-between mt-8">
+    <section class="flex items-center justify-between mt-8 max-sm:gap-4">
       {previousProject ? (
-          <a href={`/projects/${previousSlug}`} class="flex items-center gap-8">
-            <Button variant="outline" className="py-8 px-2 flex justify-between cursor-pointer bg-neutral-200">
+          <a href={`/projects/${previousSlug}`} class="w-fit flex items-center gap-8">
+            <Button variant="outline" className="w-44 max-sm:w-full py-8 px-2 flex justify-between cursor-pointer bg-neutral-200">
                 <ChevronLeft size={25}/>
                 <div class="flex flex-col justify-end items-end">
                   <span class="text-bold text-xs text-neutral-400">Anterior</span>
@@ -129,8 +151,8 @@ export async function getStaticPaths() {
       ) : <div />}
 
       {nextProject ? (
-          <a href={`/projects/${nextSlug}`} class="flex items-center gap-8">
-            <Button variant="outline" className="py-8 px-2 flex justify-between cursor-pointer bg-neutral-200">
+          <a href={`/projects/${nextSlug}`} class="w-fit flex items-center gap-8">
+            <Button variant="outline" className="w-44 max-sm:w-full py-8 px-2 flex justify-between cursor-pointer bg-neutral-200">
                 <div class="flex flex-col items-start justify-start">
                   <span class="text-bold text-xs text-neutral-400">Próximo</span>
                   <span class="text-bold text-sm text-neutral-950 dark:text-neutral-100">{nextTitle}</span>

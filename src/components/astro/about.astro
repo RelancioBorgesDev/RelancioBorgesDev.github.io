@@ -1,18 +1,15 @@
 ---
-import { Box, BriefcaseBusiness, Cloud, Code, Coffee, Database, Download, GitBranch, Globe, GraduationCap, Layers, Mail, Medal, Palette, Server, Settings, Terminal, UserPlus, Verified } from "lucide-react";
+import { BriefcaseBusiness, Code, Coffee, Download, GraduationCap, UserPlus } from "lucide-react";
 import { GiDiploma } from "react-icons/gi";
 import { AccordionExperience } from "../react/about/experience/accordion-experience";
 import { SectionTitle } from '@/components/react/about/section-title'
 import { CertificateTooltip } from '@/components/react/about/education/certificate-tooltip'
 import { AccordionTechnologies } from '@/components/react/about/tech/accordion-technologies'
 import { Achievements } from '@/components/react/about/achievements/achievements'
-
+import { motion } from "framer-motion";
 
 import certificado0 from "../../assets/certificados/certificado0.png";
-import { FaCertificate, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
-import { Button } from "../ui/button";
-
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 
 const experienceItems = [
@@ -29,9 +26,15 @@ const experienceItems = [
 ];
 ---
 
-<section id="about" class="h-full dark:bg-[#F5F5F5] bg-neutral-100 rounded-lg z-20 shadow-2xl backdrop:shadow-2xl mt-16 mx-4">
-  <main class="z-20 py-16 px-4 md:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-3 gap-16">
+<motion.section
+  id="about"
+  client:visible   
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="scroll-mt-32 h-full dark:bg-[#F5F5F5] bg-neutral-100 rounded-lg z- shadow-2xl backdrop:shadow-2xl max-sm:mt-20 mx-4">
+  <main  class=" z-20 py-8 px-4 md:px-6 lg:px-8">
+    <div   class="grid lg:grid-cols-3 gap-16">
       
       <!-- Left Column - Introduction -->
       <header class="space-y-8">
@@ -183,4 +186,4 @@ const experienceItems = [
 
     </div>
   </main>
-</section>
+</motion.section>
