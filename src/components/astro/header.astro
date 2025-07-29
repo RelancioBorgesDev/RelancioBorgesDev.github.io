@@ -1,50 +1,7 @@
 ---
-import { ModeToggle } from "../react/index";
-import { Button } from "../ui/button";
-import { Link } from "../ui/link";
-import {motion, scale} from 'framer-motion'
-
+import { MobileMenu } from '@/components/react/header/mobile-menu'
 ---
 
-  <header class="fixed top-0 left-0 right-0 z-50 dark:bg-[#1A1A1D] bg-neutral-300  w-full">
-    <div class="flex items-center justify-between px-6 py-4 max-w-[1200px] mx-auto rounded">
-      {/* LOGO */}
-      <div class="flex items-center gap-2">
-        <Link href="/" className="font-bold text-lg text-neutral-900 dark:text-neutral-100">
-          <motion.img whileHover={{scale: 1.1}} client:visible src="/favicon.svg" alt="asa" className="w-8 h-8">
-        </Link>
-      </div>
-
-      {/* NAV LINKS */}
-      <nav class="flex items-center gap-4 font-inter">
-        <Link className="text-inherit cursor-pointer" href="/#home">
-          <Button
-            variant="ghost"
-            className="px-4 font-inter font-light text-lg py-2 rounded text-neutral-900 dark:text-neutral-100 dark:hover:bg-neutral-800 transition cursor-pointer"
-          >
-            Início
-          </Button>
-        </Link>
-        <Link className="text-inherit" href="/#about">
-          <Button
-            variant="ghost"
-            className="px-4 py-2 font-inter font-light text-lg rounded cursor-pointer text-neutral-900 hover:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-800 transition"
-          >
-            Sobre
-          </Button>
-        </Link>
-        <Link className="text-inherit" href="/#projects">
-          <Button
-            variant="ghost"
-            className="px-4 py-2 font-inter font-light text-lg rounded cursor-pointer text-neutral-900 hover:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-800 transition"
-          >
-            Projetos
-          </Button>
-        </Link>
-      </nav>
-
-      <div>
-        <ModeToggle client:load />
-      </div>
-    </div>
+<header class="fixed top-0 left-0 right-0 z-50 dark:bg-[#1A1A1D] bg-neutral-300 w-full">
+  <MobileMenu client:load/>
 </header>
