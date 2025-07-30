@@ -25,14 +25,19 @@ import "@/styles/global.css";
 
 <script is:inline>
 	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
+		if (typeof localStorage !== 'undefined') {
+			const stored = localStorage.getItem('theme');
+			if (stored === 'light' || stored === 'dark') {
+				return stored;
+			}
 		}
+
 		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
- 
+
+	const theme = getThemePreference();
+	document.documentElement.classList.add(theme);
+
 	if (typeof localStorage !== 'undefined') {
 		const observer = new MutationObserver(() => {
 			const isDark = document.documentElement.classList.contains('dark');
