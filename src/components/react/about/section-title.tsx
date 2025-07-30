@@ -13,7 +13,7 @@ export function SectionTitle({
   return (
     <div className="flex  gap-2" {...props}>
       <Icon className="w-5 h-5 text-neutral-950 dark:text-neutral-200" />
-      <h2 className="text-sm font-bold text-neutral-950 dark:text-neutral-200 uppercase tracking-wider mb-6">
+      <h2 className="text-sm font-bold text-neutral-950 dark:text-neutral-200 uppercase tracking-wider mb-2">
         {title}
       </h2>
     </div>

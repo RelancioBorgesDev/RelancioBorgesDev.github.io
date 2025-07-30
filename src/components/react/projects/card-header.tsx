@@ -9,7 +9,7 @@ export function CardHeader({ image, title }: CardHeaderProps) {
       <img
         src={image}
         alt={title}
-        className="rounded-xl w-full group-hover:scale-105 transition-transform ease-in-out duration-700"
+        className="h-72 rounded-xl w-full group-hover:scale-105 transition-transform ease-in-out duration-700"
       />
     </header>
   );

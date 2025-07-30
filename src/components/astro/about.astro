@@ -1,6 +1,5 @@
 ---
 import { BriefcaseBusiness, Code, Coffee, Download, GraduationCap, NotebookPen, UserPlus } from "lucide-react";
-import { GiDiploma } from "react-icons/gi";
 import { AccordionExperience, type AccordionItemType } from "../react/about/experience/accordion-experience";
 import { SectionTitle } from '@/components/react/about/section-title'
 import { CertificateTooltip } from '@/components/react/about/education/certificate-tooltip'
@@ -123,20 +122,21 @@ const achievementsItems: AccordionItemType[] = [
               <p class="text-neutral-950 dark:text-neutral-200">Engenharia de Computação</p>
               <p class="text-neutral-950 dark:text-neutral-200">Universidade de Taubaté | 2020–2024</p>
             </div>
-            <CertificateTooltip
-              client:load
-              images={[certificado0.src]}
-              certType={""}
-            >
-              <Button
-                size="sm"
-                variant="secondary"
-                className="flex cursor-pointer items-center gap-2 rounded-full transition dark:bg-neutral-500/50 text-neutral-950 dark:text-neutral-200"
+            <div class="w-fit">
+              <CertificateTooltip
+                client:load
+                images={[certificado0.src]}
               >
-                <LiaCertificateSolid size={18} className="text-blue-950 dark:text-blue-200"/>
-                Certificado
-              </Button>
-            </CertificateTooltip>
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  className="flex cursor-pointer items-center gap-2 rounded-full transition dark:bg-neutral-500/50 text-neutral-950 dark:text-neutral-200"
+                >
+                  <LiaCertificateSolid size={18} className="text-blue-950 dark:text-blue-200"/>
+                  Certificado
+                </Button>
+              </CertificateTooltip>
+            </div>
           </div>
         </article>
 
@@ -209,7 +209,7 @@ const achievementsItems: AccordionItemType[] = [
             target="_blank"
             rel="noopener noreferrer"
             download
-            class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition-colors"
+            class="inline-flex items-center gap-2 px-4 py-2 text-neutral-950 dark:text-neutral-200 dark:bg-neutral-700/50 bg-neutral-100 rounded-xl shadow  transition-colors"
           >
             <Download size={20} />
             Baixar Currículo

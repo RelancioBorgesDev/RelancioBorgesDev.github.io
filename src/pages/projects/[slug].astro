@@ -19,7 +19,7 @@ if (!entry) {
 
 const { Content } = await entry.render();
 const { data } = entry;
-const { title, categories, image, langs, year, description } = data;
+const { title, categories, banner_image, banner_video, github_link, web_link, langs, year, description } = data;
 
 const allProjects = await getCollection('projects');
 
@@ -60,8 +60,22 @@ export async function getStaticPaths() {
         </div>
       </header>
 
-      <picture class="mt-2">
-        <Image src={image} alt="Hero image" class="rounded-2xl shadow-2xl backdrop:shadow-2xl"/>
+      <picture class="mt-2"> 
+        {banner_video ? (
+          <img 
+            src={banner_video.src} 
+            alt="Vídeo do projeto" 
+            class="rounded-2xl shadow-2xl backdrop:shadow-2xl w-full max-h-[600px] object-cover"
+          />
+        ) : (
+          <picture class="mt-2"> 
+            <Image 
+              src={banner_image} 
+              alt="Hero image" 
+              class="w-full rounded-2xl shadow-2xl backdrop:shadow-2xl"
+            />
+          </picture>
+)}
       </picture>
 
       <div class="py-4 flex flex-col gap-4 ">
@@ -69,22 +83,28 @@ export async function getStaticPaths() {
             <div class="w-full flex items-center justify-between gap-4 max-sm:flex-col max-sm:items-start max-sm:gap-5">
               <h1 class="font-inter text-5xl font-bold tracking-tight">{title}</h1>
               <div class="flex gap-2 items-center">
-                 <a   
-                  href="https://github.com/yourusername/yourrepo"
+                {github_link && ( 
+                    <a   
+                      href={github_link}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      <span>
+                        <FaGithub size={25}/>
+                      </span>
+                    </a>
+                  )
+                }
+                {web_link && (
+                  <a   
+                  href={web_link}
                   target="_blank"
                   rel="noopener noreferrer">
-                  <span>
-                    <FaGithub size={25}/>
-                  </span>
-                </a>
-                <a   
-                  href="https://github.com/yourusername/yourrepo"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <span>
-                    <SquareArrowOutUpRight size={25}/>
-                  </span>
-                </a>
+                    <span>
+                      <SquareArrowOutUpRight size={25}/>
+                    </span>
+                  </a>
+                  )
+                }
               </div>
             </div>
             <div class="flex justify-between max-sm:flex-col max-sm:gap-5">

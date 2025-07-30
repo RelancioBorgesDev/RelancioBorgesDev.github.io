@@ -31,7 +31,7 @@ interface CertificateTooltipProps {
 }
 
 export function CertificateTooltip({
-  label = "Certificado",
+  label,
   images,
   children,
   certType,
@@ -50,9 +50,11 @@ export function CertificateTooltip({
             {children}
           </span>
         </TooltipTrigger>
-        <TooltipContent>
-          <p>{certType ? `${label} ${certType}` : label}</p>
-        </TooltipContent>
+        {label && (
+          <TooltipContent>
+            <p>{certType ? `${label} ${certType}` : label}</p>
+          </TooltipContent>
+        )}
       </TooltipShadcn>
 
       <Dialog open={open} onOpenChange={setOpen}>

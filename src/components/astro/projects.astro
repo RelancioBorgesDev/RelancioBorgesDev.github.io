@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import { ProjectsSection } from '@/components/react/projects/project-section';
-import GithubAnalytics from '../../assets/user_auth/GithubAnalytics.png';
 
 const collection = await getCollection('projects');
 const projects = collection.map((entry) => ({
@@ -9,7 +8,7 @@ const projects = collection.map((entry) => ({
   title: entry.data.title,
   categories: entry.data.categories,
   year: entry.data.year,
-  image: GithubAnalytics, 
+  image: entry.data.banner_image, 
   langs: entry.data.langs.map(({ lang }) => ({
     lang,
   })),

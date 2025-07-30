@@ -34,7 +34,7 @@ export function CardFooter({
           {year}
         </p>
         <div className="flex flex-wrap gap-2 items-end justify-end">
-          {langs.map(({ lang }, index) => (
+          {langs.slice(0, 3).map(({ lang }, index) => (
             <Badge
               key={index}
               variant="outline"
