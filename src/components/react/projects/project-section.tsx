@@ -72,7 +72,6 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
           },
         }}
       >
-        <AnimatePresence mode="wait">
           {paginatedProjects.map((project) => (
             <motion.a
               key={project.slug}
@@ -85,7 +84,6 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
               <ProjectCard project={project} />
             </motion.a>
           ))}
-        </AnimatePresence>
       </motion.div>
 
       {/* Paginação */}

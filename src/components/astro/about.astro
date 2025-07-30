@@ -1,7 +1,7 @@
 ---
-import { BriefcaseBusiness, Code, Coffee, Download, GraduationCap, UserPlus } from "lucide-react";
+import { BriefcaseBusiness, Code, Coffee, Download, GraduationCap, NotebookPen, UserPlus } from "lucide-react";
 import { GiDiploma } from "react-icons/gi";
-import { AccordionExperience } from "../react/about/experience/accordion-experience";
+import { AccordionExperience, type AccordionItemType } from "../react/about/experience/accordion-experience";
 import { SectionTitle } from '@/components/react/about/section-title'
 import { CertificateTooltip } from '@/components/react/about/education/certificate-tooltip'
 import { AccordionTechnologies } from '@/components/react/about/tech/accordion-technologies'
@@ -9,19 +9,52 @@ import { Achievements } from '@/components/react/about/achievements/achievements
 import { motion } from "framer-motion";
 
 import certificado0 from "../../assets/certificados/certificado0.png";
+import vptech from "../../assets/logo/vpTech.png";
+import virtuabr from "../../assets/logo/virtuabrasil_logo.jpeg";
+
+
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Button } from "../ui/button";
+import { LiaCertificateSolid } from "react-icons/lia";
 
 
-const experienceItems = [
+const experienceItems: AccordionItemType[] = [
   {
-    value: "item-1",
-    title: "Senior Full Stack Developer",
-    content: "Leading a team of developers and architecting modern web solutions.",
+    value: "virtua",
+    position: "Desenvolvedor Fullstack Jr",
+    company: "VirtuaBrasil",
+    companyDescription: "Presencial · Jun 2024 – Set 2024",
+    fallbackName: "VB",
+    src: virtuabr.src, 
+    workContent: `
+• Desenvolvi sites como desenvolvedor front-end, utilizando tecnologias como HTML, CSS, Bootstrap, TailwindCSS, JavaScript, TypeScript e React.
+• Realizei manutenção em sites antigos, atualizando e otimizando funcionalidades para melhor desempenho e usabilidade.
+• Atuei na manutenção de um projeto back-end em Java, corrigindo bugs e implementando autenticação OAuth.
+• Implementei novas features com foco em inovação, atendendo pedidos de ajustes e novas demandas.
+• Realizei atendimento direto ao cliente, garantindo alinhamento de expectativas e entregas de qualidade.
+• Conduzi reuniões com clientes para entender requisitos e propor soluções personalizadas.
+`,
   },
   {
-    value: "item-2",
-    title: "Full Stack Developer",
-    content: "Developed and maintained multiple client projects with React and Node.js.",
+    value: "vptech",
+    position: "Desenvolvedor Front-End Jr",
+    company: "VPTech",
+    companyDescription: "Remoto · Out 2023 – Jan 2024",
+    fallbackName: "VP",
+    src: vptech.src, 
+    workContent: `
+• Realizei todo o processo de engenharia de software, incluindo a participação em entrevistas com a cliente, levantamento de requisitos, desenvolvimento, apresentação e deploy de um site personalizado.
+• Fui responsável pelo desenvolvimento do site da empresa, estruturando o estilo e a organização para atender às necessidades de marca e experiência do usuário.
+• Garanti a responsividade e acessibilidade do site em diversos dispositivos e navegadores.
+`,
+  },
+];
+
+const achievementsItems: AccordionItemType[] = [
+  {
+    value: "cert-dev-ano",
+    fallbackName: "Certificados",
+    src: "/certificates/dev-of-the-year-2024.png",
   },
 ];
 ---
@@ -32,15 +65,15 @@ const experienceItems = [
   initial={{ opacity: 0, y: 30 }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6 }}
-  className="scroll-mt-32 h-full dark:bg-[#F5F5F5] bg-neutral-100 rounded-lg z- shadow-2xl backdrop:shadow-2xl max-sm:mt-20 mx-4">
+  className="scroll-mt-24 h-full dark:bg-neutral-700/50 bg-neutral-100 rounded-lg z- shadow-2xl backdrop:shadow-2xl max-sm:mt-20 mx-4">
   <main  class=" z-20 py-8 px-4 md:px-6 lg:px-8">
     <div   class="grid lg:grid-cols-3 gap-16">
       
       <!-- Left Column - Introduction -->
       <header class="space-y-8">
         <div>
-          <h1 class="text-4xl font-light text-gray-900 mb-2">Hi!</h1>
-          <p class="text-lg text-gray-900 leading-relaxed">
+          <h1 class="text-4xl font-light text-neutral-950 dark:text-neutral-200 mb-2">Hi!</h1>
+          <p class="text-lg text-neutral-950 dark:text-neutral-200 leading-relaxed">
             I'm <span class="italic">Sarah</span> <span class="font-light">Johnson</span>,<br />
             a full-stack developer<br />
             based in San Francisco.
@@ -58,10 +91,10 @@ const experienceItems = [
         </figure>
 
         <section class="space-y-4">
-          <p class="text-gray-700 leading-relaxed">
+          <p class="text-neutral-950 dark:text-neutral-200 leading-relaxed">
             Trabalho com tecnologia há mais de 5 anos e nesse tempo aprendi que código limpo e boas práticas fazem toda a diferença. Já participei de projetos incríveis construindo sistemas web, APIs, integrações com IA e soluções pensadas para escala e performance.
           </p>
-          <p class="text-gray-700 italic leading-relaxed">
+          <p class="text-neutral-950 dark:text-neutral-200 italic leading-relaxed">
             Sou apaixonado por tecnologias modernas, arquitetura limpa e adoro criar aplicações que além de funcionais, sejam fáceis de manter e evoluir. Também curto trabalhar com Docker, Kubernetes e tudo que envolve automação e DevOps.
           </p>
       
@@ -82,24 +115,31 @@ const experienceItems = [
         </article>
 
         <article>
-          <SectionTitle icon={GraduationCap} title="Educação"/>
-          <ul class="space-y-4">
-            <li>
-              <div class="flex items-center gap-32">
-                <h3 class="text-gray-900 font-medium">Bacharelado</h3>
-                  <CertificateTooltip
-                    client:load
-                    label="Diploma"
-                    images={[certificado0.src]}
-                  >
-                    <GiDiploma className="text-blue-950" size={22}/>
-                  </CertificateTooltip>
-              </div>
-              <p class="text-gray-600">Engenharia de Computação</p>
-              <p class="text-gray-600">Universidade de Taubaté | 2020-2024</p>
-            </li>
-          </ul>
+          <SectionTitle icon={GraduationCap} title="Educação" />
+          
+          <div class="flex flex-col gap-2">
+            <div>
+              <h3 class="text-neutral-950 dark:text-neutral-100 font-semibold">Bacharelado</h3>
+              <p class="text-neutral-950 dark:text-neutral-200">Engenharia de Computação</p>
+              <p class="text-neutral-950 dark:text-neutral-200">Universidade de Taubaté | 2020–2024</p>
+            </div>
+            <CertificateTooltip
+              client:load
+              images={[certificado0.src]}
+              certType={""}
+            >
+              <Button
+                size="sm"
+                variant="secondary"
+                className="flex cursor-pointer items-center gap-2 rounded-full transition dark:bg-neutral-500/50 text-neutral-950 dark:text-neutral-200"
+              >
+                <LiaCertificateSolid size={18} className="text-blue-950 dark:text-blue-200"/>
+                Certificado
+              </Button>
+            </CertificateTooltip>
+          </div>
         </article>
+
 
         <article class="w-full">
           <SectionTitle icon={Code} title="Tecnologias"/>
@@ -113,11 +153,9 @@ const experienceItems = [
       <aside class="space-y-8">
         {/* Contato */}
         <section>
-          <h2 class="text-sm text-gray-500 uppercase tracking-wider mb-4 flex items-center gap-2 font-bold">
-            <Coffee /> Vamos conversar? 
-          </h2>
-          <address class="not-italic space-y-2 ">
-            <p class="text-gray-900 font-medium flex items-center gap-2 cursor-pointer hover:fill-gray-900 "> 
+          <SectionTitle icon={Coffee} title="Vamos conversar? "/>
+          <address class="w-fit not-italic space-y-2 ">
+            <p class="text-neutral-950 dark:text-neutral-200 font-medium flex items-center gap-2 cursor-pointer hover:fill-gray-900 "> 
               relancio.dev@gmail.com
             </p>
           </address>
@@ -125,14 +163,12 @@ const experienceItems = [
 
         {/* Redes Sociais */}
         <nav aria-label="Redes Sociais">
-          <h2 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4 flex items-center gap-2">
-            <UserPlus /> Siga-me
-          </h2>
+          <SectionTitle icon={UserPlus} title="Siga-me"/>
           <ul class="space-y-2">
             <li>
               <a
                 href="https://linkedin.com/in/seu-usuario"
-                class="flex items-center gap-2 text-gray-900 hover:text-blue-600 transition-colors"
+                class="w-fit flex items-center gap-2 text-neutral-950 dark:text-neutral-200 hover:text-blue-600 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -142,7 +178,7 @@ const experienceItems = [
             <li>
               <a
                 href="https://github.com/seu-usuario"
-                class="flex items-center gap-2 text-gray-900 hover:text-gray-800 transition-colors"
+                class="w-fit flex items-center gap-2 text-neutral-950 dark:text-neutral-200 hover:text-gray-800 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -153,14 +189,12 @@ const experienceItems = [
         </nav>
 
         {/* Conquistas */}
-        <Achievements client:visible/>
+        <Achievements certificates={achievementsItems} client:visible/>
 
         {/* Notas e Frases */}
         <footer class="space-y-2 mt-5">
-          <h2 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">
-            Notas
-          </h2>
-          <ul class="space-y-3 text-sm text-gray-700">
+          <SectionTitle icon={NotebookPen} title="Notas"/>
+          <ul class="space-y-3 text-sm text-neutral-950 dark:text-neutral-200">
             <li>| Criatividade é a melhor estratégia para resolver problemas.</li>
             <li>| Organização, resiliência e persistência são a base de um bom trabalho.</li>
             <li>| Boas conexões geram os melhores projetos.</li>

@@ -8,8 +8,8 @@ interface AvatarProfileProps {
 
 export function AvatarProfile({ src, fallbackName }: AvatarProfileProps) {
   return (
-    <Avatar>
-      <AvatarImage src={src} />
+    <Avatar className={`${src.includes("vpTech") ? "bg-white" : ""} w-11 h-11`}>
+      <AvatarImage src={src} className=""/>
       <AvatarFallback>{fallbackName}</AvatarFallback>
     </Avatar>
   );

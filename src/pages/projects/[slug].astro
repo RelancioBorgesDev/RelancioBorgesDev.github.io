@@ -46,12 +46,12 @@ export async function getStaticPaths() {
   <main class="text-foreground p-8 mx-auto space-y-8 flex  flex-col justify-center mt-[72px] max-w-5xl">
     <section class="flex flex-col gap-4">
       <header class="w-full flex items-center justify-between ">
-        <Button variant={"ghost"} className='hover:bg-transparent hover:motion-text-' client:visible>
-          <a href="/" class="flex items-center gap-2">
+        <a href="/" class="flex items-center gap-2 cursor-pointer">
+          <Button variant={"ghost"} className='hover:bg-transparent cursor-pointer' client:visible>
             <ChevronLeft/>
             <span class="text-md font-bold">Voltar para o inicio</span>
-          </a>
-        </Button>
+          </Button>
+        </a>
         <div class="flex flex-col-reverse justify-end items-end">
           <Badge variant={"outline"} className='text-sm border-0 font-semibold text-neutral-950 dark:text-neutral-200 border-neutral-950 dark:border-neutral-200 py-1 px-2 rounded-xs'
             >

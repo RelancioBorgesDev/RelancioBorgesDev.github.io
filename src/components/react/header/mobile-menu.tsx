@@ -42,17 +42,17 @@ export function MobileMenu() {
       {/* Navegação para desktop */}
       <nav className="hidden md:flex md:items-center md:gap-4">
         <Link href="/#home">
-          <Button variant="ghost" className="text-xl font-light">
+          <Button variant="ghost" className="text-xl font-light text-neutral-950 dark:text-neutral-200">
             Início
           </Button>
         </Link>
         <Link href="/#about">
-          <Button variant="ghost" className="text-xl font-light">
+          <Button variant="ghost" className="text-xl font-light text-neutral-950 dark:text-neutral-200">
             Sobre
           </Button>
         </Link>
         <Link href="/#projects">
-          <Button variant="ghost" className="text-xl font-light">
+          <Button variant="ghost" className="text-xl font-light text-neutral-950 dark:text-neutral-200">
             Projetos
           </Button>
         </Link>

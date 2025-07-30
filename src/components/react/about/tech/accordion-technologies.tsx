@@ -23,12 +23,13 @@ export function AccordionTechnologies() {
       <TechAccordionSection
         value="frontend"
         triggerIcon={Proportions}
-        title="Frontend"
+        title="Front-End"
         description="I specialize in creating modern, responsive user interfaces with a focus on performance and user experience. My expertise spans from component-based architectures to state management and styling solutions."
         techs={frontendTechs}
         certificates={[
           {
-            label: "Certificados Frontend",
+            label: "Certificados",
+            certType: "Front-End",
             images: [certificadoFrontend.src],
           },
         ]}
@@ -37,12 +38,13 @@ export function AccordionTechnologies() {
       <TechAccordionSection
         value="backend"
         triggerIcon={Server}
-        title="Backend"
+        title="Back-End"
         description="I excel at designing and building robust, scalable backend systems, from RESTful APIs to real-time communication and database optimization."
         techs={backendTechs}
         certificates={[
           {
-            label: "Certificados Backend",
+            label: "Certificados",
+            certType: "Back-End",
             images: [certificadoBackend.src, certificadoDevOps.src],
           },
         ]}
@@ -56,7 +58,8 @@ export function AccordionTechnologies() {
         techs={devOpsTechs}
         certificates={[
           {
-            label: "Certificados DevOps",
+            label: "Certificados",
+            certType: "DevOps",
             images: [certificadoDevOps.src],
           },
         ]}

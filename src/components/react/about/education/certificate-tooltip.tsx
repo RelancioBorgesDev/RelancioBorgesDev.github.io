@@ -7,9 +7,9 @@ import {
 } from "@/components/ui/tooltip";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
-  DialogTrigger,
+  DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 
 import {
@@ -21,24 +21,26 @@ import {
 } from "@/components/ui/carousel";
 
 import { useState } from "react";
-import { X } from "lucide-react";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 interface CertificateTooltipProps {
-  label: string;
+  label?: string;
   images: string[];
   children: React.ReactNode;
+  certType?: string;
 }
 
 export function CertificateTooltip({
-  label,
+  label = "Certificado",
   images,
   children,
+  certType,
 }: CertificateTooltipProps) {
   const [open, setOpen] = useState(false);
+  const descriptionId = "certificate-dialog-description";
 
   return (
     <>
-      {/* Tooltip */}
       <TooltipShadcn>
         <TooltipTrigger asChild>
           <span
@@ -49,14 +51,22 @@ export function CertificateTooltip({
           </span>
         </TooltipTrigger>
         <TooltipContent>
-          <p>{label}</p>
+          <p>{certType ? `${label} ${certType}` : label}</p>
         </TooltipContent>
       </TooltipShadcn>
 
-      {/* Modal */}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger asChild>{/* Controlado pelo estado */}</DialogTrigger>
-        <DialogContent className="!w-full !max-w-none !h-full !max-h-none p-0 bg-transparent border-0 shadow-none flex items-center justify-center">
+        <DialogContent
+          className="!w-full !max-w-none !h-full !max-h-none p-0 bg-transparent border-0 shadow-none flex items-center justify-center"
+          aria-describedby={descriptionId}
+        >
+          <VisuallyHidden>
+            <DialogTitle>{label}</DialogTitle>
+            <DialogDescription id={descriptionId}>
+              Visualização de certificado
+            </DialogDescription>
+          </VisuallyHidden>
+
           {images.length === 1 ? (
             <img
               src={images[0]}
@@ -79,8 +89,6 @@ export function CertificateTooltip({
                   </CarouselItem>
                 ))}
               </CarouselContent>
-
-              {/* Botões de navegação */}
               <CarouselPrevious className="absolute cursor-pointer left-4 top-1/2 -translate-y-1/2 z-10 rounded-full transition" />
               <CarouselNext className="absolute cursor-pointer right-4 top-1/2 -translate-y-1/2 z-10 rounded-full  transition" />
             </Carousel>
