@@ -1,46 +1,44 @@
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { Medal } from "lucide-react";
-import { FcDiploma1 } from "react-icons/fc";
 import { SectionTitle } from "../section-title";
 import { CertificateTooltip } from "../education/certificate-tooltip";
-import type { AccordionItemType } from "../experience/accordion-experience";
 import { LiaCertificateSolid } from "react-icons/lia";
 
-const experienceItems: AccordionItemType[] = [
-  {
-    value: "cert1",
-    src: "a.png",
-  },
-];
+export interface CertificateItem {
+  id: string;
+  title: string;
+  description: string;
+  src: string;
+  fallbackName?: string;
+}
 
 interface AchievementsProps {
-  certificates: AccordionItemType[];
+  certificates: CertificateItem[];
 }
 
 export function Achievements({ certificates }: AchievementsProps) {
   return (
     <section>
       <SectionTitle icon={Medal} title="Conquistas" />
-      <ul className="space-y-2">
-        <li className="text-neutral-950 dark:text-neutral-200">
-          🏅 Prêmio Desenvolvedor do Ano - 2024
-        </li>
-        <li className="text-neutral-950 dark:text-neutral-200">
-          🥇 Hackathon Nacional - 1º Lugar
-        </li>
+
+      <ul className="space-y-4 mt-4">
+        {certificates.map((cert) => (
+          <li key={cert.id} className="text-neutral-950 dark:text-neutral-200">
+            <p className="font-semibold">{cert.title}</p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              {cert.description}
+            </p>
+          </li>
+        ))}
       </ul>
 
-      <div className="flex flex-wrap gap-2 mt-2">
-        {certificates.map((certificate, index) => (
-          <CertificateTooltip key={index} images={[certificate.src]}>
+      <div className="flex flex-wrap gap-2 mt-4">
+        {certificates.map((certificate) => (
+          <CertificateTooltip
+            key={certificate.id}
+            images={[certificate.src]}
+            pdfUrl="https://mail.google.com/mail/u/1/#search/Certificado/FMfcgzQbgJJnkDfvqsdmvlbZXrNsZcxM"
+          >
             <Button
               size="sm"
               variant="secondary"

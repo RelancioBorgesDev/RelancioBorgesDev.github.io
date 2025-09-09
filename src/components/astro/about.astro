@@ -4,10 +4,10 @@ import { AccordionExperience, type AccordionItemType } from "../react/about/expe
 import { SectionTitle } from '@/components/react/about/section-title'
 import { CertificateTooltip } from '@/components/react/about/education/certificate-tooltip'
 import { AccordionTechnologies } from '@/components/react/about/tech/accordion-technologies'
-import { Achievements } from '@/components/react/about/achievements/achievements'
+import { Achievements, type CertificateItem } from '@/components/react/about/achievements/achievements'
 import { motion } from "framer-motion";
 
-import certificado0 from "../../assets/certificados/certificado0.png";
+import diploma from "../../assets/certificados/diploma.png";
 import vptech from "../../assets/logo/vpTech.png";
 import virtuabr from "../../assets/logo/virtuabrasil_logo.jpeg";
 
@@ -15,6 +15,9 @@ import virtuabr from "../../assets/logo/virtuabrasil_logo.jpeg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Button } from "../ui/button";
 import { LiaCertificateSolid } from "react-icons/lia";
+import honra from "../../assets/certificados/honra.png";
+import merito from "../../assets/certificados/merito.jpg";
+
 
 
 const experienceItems: AccordionItemType[] = [
@@ -49,13 +52,25 @@ const experienceItems: AccordionItemType[] = [
   },
 ];
 
-const achievementsItems: AccordionItemType[] = [
+const certificatesData: CertificateItem[] = [
   {
-    value: "cert-dev-ano",
-    fallbackName: "Certificados",
-    src: "/certificates/dev-of-the-year-2024.png",
+    id: "cert1",
+    title: "🏆 Prêmio CREA-SP – Formandos 2024: O Futuro da Engenharia",
+    description:
+      "Reconhecimento do Conselho Regional de Engenharia e Agronomia de São Paulo pelo destaque acadêmico no curso de Engenharia de Computação – Universidade de Taubaté (UNITAU).",
+    src: merito.src,
+    fallbackName: "Prêmio CREA-SP",
+  },
+  {
+    id: "cert2",
+    title: "🎖️ Certificado de Honra ao Mérito CREA-SP",
+    description:
+      "Concedido pelo Conselho Regional de Engenharia e Agronomia de São Paulo por destaque acadêmico no curso de Engenharia de Computação – Universidade de Taubaté (UNITAU).",
+    src: honra.src,
+    fallbackName: "Honra ao Mérito",
   },
 ];
+
 ---
 
 <motion.section
@@ -68,39 +83,47 @@ const achievementsItems: AccordionItemType[] = [
   <main  class=" z-20 py-8 px-4 md:px-6 lg:px-8">
     <div   class="grid lg:grid-cols-3 gap-16">
       
-      <!-- Left Column - Introduction -->
       <header class="space-y-8">
         <div>
-          <h1 class="text-4xl font-light text-neutral-950 dark:text-neutral-200 mb-2">Hi!</h1>
+          <h1 class="text-4xl font-light text-neutral-950 dark:text-neutral-200 mb-2">
+            Olá!
+          </h1>
           <p class="text-lg text-neutral-950 dark:text-neutral-200 leading-relaxed">
-            I'm <span class="italic">Sarah</span> <span class="font-light">Johnson</span>,<br />
-            a full-stack developer<br />
-            based in San Francisco.
+            Eu sou <span class="italic">Relâncio</span>{" "}
+            <span class="font-light">Borges dos Santos</span>,<br />
+            desenvolvedor full-stack<br />
+            baseado no Brasil.
           </p>
         </div>
-
-        <figure class="w-64 h-80 bg-gray-100 rounded-lg overflow-hidden">
+      
+        <figure class="w-64 h-80 bg-gray-100 rounded-lg overflow-hidden shadow-lg">
           <img
-            src="/placeholder.svg?height=320&width=256"
-            alt="Relancio Borges"
+            src="https://github.com/RelancioBorgesDev.png"
+            alt="Relâncio Borges dos Santos"
             width={256}
             height={320}
             class="w-full h-full object-cover"
           />
         </figure>
-
+      
         <section class="space-y-4">
           <p class="text-neutral-950 dark:text-neutral-200 leading-relaxed">
-            Trabalho com tecnologia há mais de 5 anos e nesse tempo aprendi que código limpo e boas práticas fazem toda a diferença. Já participei de projetos incríveis construindo sistemas web, APIs, integrações com IA e soluções pensadas para escala e performance.
-          </p>
-          <p class="text-neutral-950 dark:text-neutral-200 italic leading-relaxed">
-            Sou apaixonado por tecnologias modernas, arquitetura limpa e adoro criar aplicações que além de funcionais, sejam fáceis de manter e evoluir. Também curto trabalhar com Docker, Kubernetes e tudo que envolve automação e DevOps.
+            Sou graduado em <span class="font-semibold">Engenharia da Computação</span> 
+            e tenho experiência profissional como <span class="font-medium">Desenvolvedor Fullstack Jr</span> 
+            na VirtuaBrasil (2024) e como <span class="font-medium">Desenvolvedor Front-End Jr</span> 
+            na VPTech (2023–2024). Nessas experiências, participei de todas as etapas do desenvolvimento, 
+            desde o contato com clientes até a entrega final.
           </p>
       
+          <p class="text-neutral-950 dark:text-neutral-200 leading-relaxed">
+            Trabalho com <span class="font-medium">JavaScript, TypeScript, React, Node.js, TailwindCSS</span>, 
+            além de back-end em Java. Atualmente desenvolvo projetos com 
+            <span class="font-medium">NestJS, Fastify, PostgreSQL, Docker e Kubernetes.</span>
+          </p>
+   
         </section>
       </header>
 
-      <!-- Middle Column - Experience & Skills -->
       <section class="space-y-12" aria-labelledby="experience-education">
         <article>
           <SectionTitle icon={BriefcaseBusiness} title="Experiência"/>
@@ -125,7 +148,7 @@ const achievementsItems: AccordionItemType[] = [
             <div class="w-fit">
               <CertificateTooltip
                 client:load
-                images={[certificado0.src]}
+                images={[diploma.src]}
               >
                 <Button
                   size="sm"
@@ -149,9 +172,7 @@ const achievementsItems: AccordionItemType[] = [
         </article>
       </section>
 
-    <!-- Right Column - Contact & Achievements -->
       <aside class="space-y-8">
-        {/* Contato */}
         <section>
           <SectionTitle icon={Coffee} title="Vamos conversar? "/>
           <address class="w-fit not-italic space-y-2 ">
@@ -161,13 +182,12 @@ const achievementsItems: AccordionItemType[] = [
           </address>
         </section>
 
-        {/* Redes Sociais */}
         <nav aria-label="Redes Sociais">
           <SectionTitle icon={UserPlus} title="Siga-me"/>
           <ul class="space-y-2">
             <li>
               <a
-                href="https://linkedin.com/in/seu-usuario"
+                href="https://www.linkedin.com/in/relancioborges/"
                 class="w-fit flex items-center gap-2 text-neutral-950 dark:text-neutral-200 hover:text-blue-600 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -177,7 +197,7 @@ const achievementsItems: AccordionItemType[] = [
             </li>
             <li>
               <a
-                href="https://github.com/seu-usuario"
+                href="https:https://github.com/RelancioBorgesDev"
                 class="w-fit flex items-center gap-2 text-neutral-950 dark:text-neutral-200 hover:text-gray-800 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -188,21 +208,17 @@ const achievementsItems: AccordionItemType[] = [
           </ul>
         </nav>
 
-        {/* Conquistas */}
-        <Achievements certificates={achievementsItems} client:visible/>
+        <Achievements certificates={certificatesData} client:visible/>
 
-        {/* Notas e Frases */}
         <footer class="space-y-2 mt-5">
-          <SectionTitle icon={NotebookPen} title="Notas"/>
+          <SectionTitle icon={NotebookPen} title="Valores"/>
           <ul class="space-y-3 text-sm text-neutral-950 dark:text-neutral-200">
-            <li>| Criatividade é a melhor estratégia para resolver problemas.</li>
-            <li>| Organização, resiliência e persistência são a base de um bom trabalho.</li>
-            <li>| Boas conexões geram os melhores projetos.</li>
-            <li>| Buscar sempre: amor como ato revolucionário.</li>
+            <li>🤝 Comunicação clara e proativa</li>
+            <li>🧩 Resolução de problemas complexos</li>
+            <li>📚 Aprendizado contínuo e curiosidade</li>
           </ul>
         </footer>
 
-        {/* Botão de Currículo */}
         <div>
           <a
             href="/curriculo.pdf"

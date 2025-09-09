@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "@/lib/utils"; // assuming you use shadcn or created your own cn helper
+import { cn } from "@/lib/utils";
 
 interface ShinyTextProps {
   text: string;

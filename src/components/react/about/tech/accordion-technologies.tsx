@@ -8,10 +8,7 @@ import {
 } from "@/utils/techs";
 import { Container, Proportions, Server, ToolCase } from "lucide-react";
 
-// Importa certificados (mock)
-import certificadoFrontend from "@/assets/certificados/certificado0.png";
-import certificadoBackend from "@/assets/certificados/certificado1.png";
-import certificadoDevOps from "@/assets/certificados/certificado10.png";
+import { frontendCerts, backendCerts, devOpsCerts } from "@/utils/certificates";
 
 export function AccordionTechnologies() {
   return (
@@ -24,13 +21,13 @@ export function AccordionTechnologies() {
         value="frontend"
         triggerIcon={Proportions}
         title="Front-End"
-        description="I specialize in creating modern, responsive user interfaces with a focus on performance and user experience. My expertise spans from component-based architectures to state management and styling solutions."
+        description="Experiência na criação de interfaces modernas, responsivas e acessíveis, sempre com foco em performance e experiência do usuário. Trabalho com arquiteturas baseadas em componentes, gerenciamento de estado e boas práticas de estilização."
         techs={frontendTechs}
         certificates={[
           {
             label: "Certificados",
             certType: "Front-End",
-            images: [certificadoFrontend.src],
+            images: frontendCerts,
           },
         ]}
       />
@@ -39,13 +36,13 @@ export function AccordionTechnologies() {
         value="backend"
         triggerIcon={Server}
         title="Back-End"
-        description="I excel at designing and building robust, scalable backend systems, from RESTful APIs to real-time communication and database optimization."
+        description="Atuação no desenvolvimento de sistemas robustos e escaláveis, incluindo APIs RESTful, otimização de banco de dados e comunicação em tempo real. Priorizo código limpo, arquitetura bem definida e soluções seguras."
         techs={backendTechs}
         certificates={[
           {
             label: "Certificados",
             certType: "Back-End",
-            images: [certificadoBackend.src, certificadoDevOps.src],
+            images: backendCerts,
           },
         ]}
       />
@@ -54,13 +51,13 @@ export function AccordionTechnologies() {
         value="devops"
         triggerIcon={Container}
         title="DevOps"
-        description="I have experience with containerization, CI/CD pipelines, infrastructure as code, and monitoring tools to ensure reliable deployments."
+        description="Experiência em automação e infraestrutura como código, utilizando containers, pipelines de CI/CD e monitoramento de aplicações. Busco garantir entregas rápidas, confiáveis e ambientes preparados para escalar."
         techs={devOpsTechs}
         certificates={[
           {
             label: "Certificados",
             certType: "DevOps",
-            images: [certificadoDevOps.src],
+            images: devOpsCerts,
           },
         ]}
       />
@@ -69,7 +66,7 @@ export function AccordionTechnologies() {
         value="tools"
         triggerIcon={ToolCase}
         title="Ferramentas"
-        description="These are the tools and platforms I use daily to streamline development workflows, improve productivity, and ensure project quality."
+        description="Ferramentas e plataformas que utilizo ou já utilizei, as quais facilitam e agilizam os fluxos de trabalho, aumentam a produtividade e asseguram qualidade em todas as etapas do desenvolvimento."
         techs={toolsTechs}
       />
     </Accordion>

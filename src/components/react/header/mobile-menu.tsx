@@ -13,7 +13,6 @@ export function MobileMenu() {
 
   return (
     <header className="px-6 py-4 max-w-[1200px] mx-auto flex items-center justify-between relative z-50">
-      {/* Logo */}
       <div className="flex items-center gap-2">
         <Link
           href="/"
@@ -28,7 +27,6 @@ export function MobileMenu() {
         </Link>
       </div>
 
-      {/* Botão do menu com animação */}
       <motion.button
         onClick={handleToggle}
         className="md:hidden z-50 cursor-pointer text-neutral-950 dark:text-neutral-200"
@@ -39,7 +37,6 @@ export function MobileMenu() {
         {isOpen ? <X size={32} /> : <Menu size={32} />}
       </motion.button>
 
-      {/* Navegação para desktop */}
       <nav className="hidden md:flex md:items-center md:gap-4">
         <Link href="/#home">
           <Button variant="ghost" className="text-xl font-light text-neutral-950 dark:text-neutral-200">
@@ -59,7 +56,6 @@ export function MobileMenu() {
         <ModeToggle />
       </nav>
 
-      {/* Navegação mobile com animação */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

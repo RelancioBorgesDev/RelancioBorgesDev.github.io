@@ -7,13 +7,11 @@ export function ModeToggle() {
     "system"
   );
 
-  // Check current theme on mount
   React.useEffect(() => {
     const isDark = document.documentElement.classList.contains("dark");
     setTheme(isDark ? "dark" : "light");
   }, []);
 
-  // Update theme
   React.useEffect(() => {
     const isDark =
       theme === "dark" ||

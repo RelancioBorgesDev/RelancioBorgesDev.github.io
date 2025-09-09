@@ -193,7 +193,7 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft size={28} className="text-white " />
+      <ArrowLeft size={28} className="dark:text-white text-neutral-950" />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -213,7 +213,7 @@ function CarouselNext({
       variant={"carousel"}
       size={size}
       className={cn(
-        "absolute size-12 rounded-full",
+        "absolute size-12 rounded-full bg-neutral-500 ",
         orientation === "horizontal"
           ? "top-1/2 -right-12 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -223,7 +223,7 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight />
+      <ArrowRight className="dark:text-white text-neutral-950" />
       <span className="sr-only">Next slide</span>
     </Button>
   );

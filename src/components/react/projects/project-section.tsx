@@ -36,7 +36,6 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
 
   return (
     <div>
-      {/* Título + Filtros */}
       <motion.div
         className="flex items-center justify-between gap-6 mb-10 max-lg:flex-col"
         initial={{ opacity: 0, y: -20 }}
@@ -59,7 +58,6 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
         </div>
       </motion.div>
 
-      {/* Lista de projetos com animação */}
       <motion.div
         className="grid md:grid-cols-2 gap-12"
         initial="hidden"
@@ -86,7 +84,6 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
           ))}
       </motion.div>
 
-      {/* Paginação */}
       <motion.footer
         className="flex flex-row justify-between items-center mt-12 max-sm:flex-col max-sm:gap-4"
         initial={{ opacity: 0, y: 10 }}
