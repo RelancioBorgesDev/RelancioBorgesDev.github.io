@@ -10,7 +10,7 @@ banner_video: ""
 langs:
   - lang: "NodeJS"
   - lang: "Fastify"
-  - lang: "PrismaORM"
+  - lang: "Prisma"
   - lang: "Vitest"
   - lang: "Docker"
 ---
@@ -23,7 +23,7 @@ Este sistema foi construído com foco em **escalabilidade, organização de cód
 
 ### 🛠️ Tecnologias utilizadas
 
-- **Node.js + Fastify**: API leve e performática com tipagem forte via TypeScript.
+- **Node.js + Fastify**: API leve e performática com tipagem forte via Typescript.
 - **PostgreSQL + Prisma ORM**: Banco relacional robusto com mapeamento objeto-relacional intuitivo.
 - **Zod**: Validação segura de dados de entrada (DTOs).
 - **JWT**: Autenticação com tokens e controle de acesso por rotas.

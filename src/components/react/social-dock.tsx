@@ -4,14 +4,15 @@ import { motion } from "framer-motion";
 const socials = [
   {
     name: "GitHub",
-    href: "https://github.com/seu-usuario",
+    href: "https://github.com/RelancioBorgesDev",
     icon: FaGithub,
     white_mode: "black",
     dark_mode: "white",
   },
+
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/seu-usuario",
+    href: "https://www.linkedin.com/in/relancioborges/",
     icon: FaLinkedin,
     white_mode: "blue-500",
     dark_mode: "blue-400",

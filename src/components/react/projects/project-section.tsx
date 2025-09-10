@@ -1,27 +1,45 @@
-"use client";
-
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Filters } from "./filters";
 import { TextType } from "@/components/react/react-bits/text-type";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ProjectCard, type Project } from "./project-card";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface ProjectsSectionProps {
   projects: Project[];
 }
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
-  const [selectedCategory, setSelectedCategory] = useState<"All" | string>(
-    "All"
-  );
   const [currentPage, setCurrentPage] = useState(1);
   const [projectsPerPage, setProjectsPerPage] = useState(4);
+  const [filters, setFilters] = useState<{
+    topics: string[];
+    languages: string[];
+  }>({
+    topics: [],
+    languages: [],
+  });
 
-  const filteredProjects = projects.filter(
-    (p) => selectedCategory === "All" || p.categories.includes(selectedCategory)
+  const handleFilterChange = useCallback(
+    (filters: { topics: string[]; languages: string[] }) => {
+      setFilters(filters);
+      setCurrentPage(1);
+    },
+    []
   );
+
+  const filteredProjects = projects.filter((p) => {
+    const topicMatch =
+      filters.topics.length === 0 ||
+      filters.topics.some((topic) => p.categories.includes(topic));
+
+    const languageMatch =
+      filters.languages.length === 0 ||
+      filters.languages.some((lang) => p.langs.some((l) => l.lang === lang));
+
+    return topicMatch && languageMatch;
+  });
 
   const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
 
@@ -49,12 +67,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
           />
         </h1>
         <div className="flex flex-col md:flex-row items-center">
-          <Filters
-            onChangeCategory={(cat) => {
-              setSelectedCategory(cat);
-              setCurrentPage(1);
-            }}
-          />
+          <Filters onChangeFilters={handleFilterChange} projects={projects} />
         </div>
       </motion.div>
 
@@ -70,18 +83,18 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
           },
         }}
       >
-          {paginatedProjects.map((project) => (
-            <motion.a
-              key={project.slug}
-              href={`/projects/${project.slug}`}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-            >
-              <ProjectCard project={project} />
-            </motion.a>
-          ))}
+        {paginatedProjects.map((project) => (
+          <motion.a
+            key={project.slug}
+            href={`/projects/${project.slug}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+          >
+            <ProjectCard project={project} />
+          </motion.a>
+        ))}
       </motion.div>
 
       <motion.footer

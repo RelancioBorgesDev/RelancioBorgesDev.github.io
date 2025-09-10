@@ -46,7 +46,7 @@ export function MultiSelectFilter({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] max-sm:w-full bg-neutral-200 justify-between truncate overflow-hidden whitespace-nowrap text-neutral-950 dark:text-neutral-200"
+          className="w-fit max-sm:w-full bg-neutral-200 justify-between truncate overflow-hidden whitespace-nowrap text-neutral-950 dark:text-neutral-200"
           title={selected.join(", ")}
         >
           {selected.length > 0
@@ -57,7 +57,7 @@ export function MultiSelectFilter({
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0 max-sm:w-full">
+      <PopoverContent className="w-fit p-0 max-sm:w-full">
         <Command className="bg-neutral-200 dark:bg-neutral-950">
           <CommandInput  placeholder={`Buscar ${label.toLowerCase()}...`} />
           <CommandGroup className="bg-neutral-200 dark:bg-neutral-950">

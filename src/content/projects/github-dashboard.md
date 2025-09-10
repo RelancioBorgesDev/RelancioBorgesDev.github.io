@@ -14,6 +14,7 @@ langs:
   - lang: "Next Auth"
   - lang: "Tailwind"
 ---
+
 O projeto **Github Dashboard** nasceu da iniciativa de aprofundar meus conhecimentos em autenticação web com **Next.js**. A principal proposta foi integrar **NextAuth.js**, uma poderosa biblioteca open source que simplifica a implementação de autenticação full stack, oferecendo suporte a diversos provedores como GitHub, Google, e autenticação com credenciais (e-mail/senha).
 
 O sistema simula o processo completo de registro e login de usuários, utilizando autenticação OAuth com GitHub, além de armazenar dados localmente com `json-server`. O projeto também inclui um painel (dashboard) personalizado para cada usuário autenticado.
@@ -22,31 +23,32 @@ O sistema simula o processo completo de registro e login de usuários, utilizand
 
 ### 💡 Principais Funcionalidades
 
-* Páginas de **Login** e **Registro** com design responsivo.
-* Autenticação com **OAuth (GitHub)** via NextAuth.
-* Registro de usuário com persistência dos dados simulada via `json-server`.
-* Validação de formulário com **Zod** e **React Hook Form**.
-* Sessão autenticada com dados acessíveis no Dashboard:
+- Páginas de **Login** e **Registro** com design responsivo.
+- Autenticação com **OAuth (GitHub)** via NextAuth.
+- Registro de usuário com persistência dos dados simulada via `json-server`.
+- Validação de formulário com **Zod** e **React Hook Form**.
+- Sessão autenticada com dados acessíveis no Dashboard:
 
-  * Visualização do nome de usuário, e-mail e senha (simulada).
-  * Possibilidade de logout.
-* Dashboard estilizado com componentes visuais personalizados.
+  - Visualização do nome de usuário, e-mail e senha (simulada).
+  - Possibilidade de logout.
+
+- Dashboard estilizado com componentes visuais personalizados.
 
 ---
 
 ### ⚙️ Tecnologias Utilizadas
 
-* **Linguagem**: TypeScript
-* **Framework principal**: Next.js (v14.1.0)
-* **Bibliotecas e Ferramentas**:
+- **Linguagem**: Typescript
+- **Framework principal**: Next.js (v14.1.0)
+- **Bibliotecas e Ferramentas**:
 
-  * NextAuth.js
-  * Tailwind CSS
-  * React Hook Form
-  * Zod
-  * Axios
-  * json-server
-  * shadcn/ui
+  - NextAuth.js
+  - Tailwind CSS
+  - React Hook Form
+  - Zod
+  - Axios
+  - json-server
+  - shadcn/ui
 
 ---
 
@@ -57,19 +59,19 @@ O sistema simula o processo completo de registro e login de usuários, utilizand
 
 2. **Implementação técnica**
 
-   * Criação das rotas principais: Home, Login, Registro e Dashboard.
-   * Configuração do Tailwind CSS para estilo responsivo e acessível.
-   * Implementação da lógica de autenticação com **NextAuth**.
-   * Integração com `json-server` para simular chamadas de API.
-   * Validação dos formulários de autenticação com **React Hook Form** + **Zod**.
-   * Renderização condicional dos dados da sessão no Dashboard.
+   - Criação das rotas principais: Home, Login, Registro e Dashboard.
+   - Configuração do Tailwind CSS para estilo responsivo e acessível.
+   - Implementação da lógica de autenticação com **NextAuth**.
+   - Integração com `json-server` para simular chamadas de API.
+   - Validação dos formulários de autenticação com **React Hook Form** + **Zod**.
+   - Renderização condicional dos dados da sessão no Dashboard.
 
 ---
 
 ### 📌 Observações
 
-* O projeto é **100% front-end**, com persistência local via `json-server`.
-* Alguns inputs estão desativados ou sem ações de backend, pois o foco foi o estudo de autenticação e sessões com NextAuth.
-* Nem todos os endpoints da API do GitHub foram utilizados, mas a estrutura permite fácil expansão futura.
+- O projeto é **100% front-end**, com persistência local via `json-server`.
+- Alguns inputs estão desativados ou sem ações de backend, pois o foco foi o estudo de autenticação e sessões com NextAuth.
+- Nem todos os endpoints da API do GitHub foram utilizados, mas a estrutura permite fácil expansão futura.
 
 ---

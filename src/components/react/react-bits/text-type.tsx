@@ -1,5 +1,3 @@
-"use client";
-
 import {
   useEffect,
   useRef,
@@ -189,7 +187,7 @@ export const TextType = ({
     },
     <span className="inline text-neutral-950 dark:text-neutral-200">
       {displayedText}
-    </span>,
+    </span>
     /* showCursor && (
       <span
         ref={cursorRef}

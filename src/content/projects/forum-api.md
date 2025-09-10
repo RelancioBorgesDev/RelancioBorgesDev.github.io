@@ -8,7 +8,7 @@ year: "2024"
 banner_image: "../../assets/projects/images/forum-api.png"
 banner_video: ""
 langs:
-  - lang: "TypeScript"
+  - lang: "Typescript"
   - lang: "NestJS"
   - lang: "Prisma"
   - lang: "Redis"
