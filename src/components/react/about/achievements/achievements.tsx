@@ -34,11 +34,7 @@ export function Achievements({ certificates }: AchievementsProps) {
 
       <div className="flex flex-wrap gap-2 mt-4">
         {certificates.map((certificate) => (
-          <CertificateTooltip
-            key={certificate.id}
-            images={[certificate.src]}
-            pdfUrl="https://mail.google.com/mail/u/1/#search/Certificado/FMfcgzQbgJJnkDfvqsdmvlbZXrNsZcxM"
-          >
+          <CertificateTooltip key={certificate.id} images={[certificate.src]}>
             <Button
               size="sm"
               variant="secondary"
