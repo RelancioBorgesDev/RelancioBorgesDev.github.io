@@ -126,6 +126,9 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
             <option value={10}>10</option>
           </select>
         </div>
+        <div className="text-sm sm:hidden font-medium text-muted-foreground">
+          Página {currentPage} de {totalPages}
+        </div>
 
         {totalPages > 1 && (
           <div className="flex justify-center items-center gap-4">
@@ -144,7 +147,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
               Anterior
             </Button>
 
-            <div className="text-sm font-medium text-muted-foreground">
+            <div className="text-sm hidden sm:block font-medium text-muted-foreground">
               Página {currentPage} de {totalPages}
             </div>
 

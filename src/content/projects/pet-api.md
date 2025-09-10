@@ -5,7 +5,7 @@ github_link: "https://github.com/RelancioBorgesDev/pet-api"
 web_link: ""
 categories: ["Back-End"]
 year: "2025"
-banner_image: "../../assets/projects/images/pet-ong.png"
+banner_image: "../../assets/projects/images/pet-ong.jpg"
 banner_video: ""
 langs:
   - lang: "NodeJS"

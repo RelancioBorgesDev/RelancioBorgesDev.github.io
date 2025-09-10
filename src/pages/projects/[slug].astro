@@ -107,12 +107,12 @@ export async function getStaticPaths() {
                 }
               </div>
             </div>
-            <div class="flex justify-between max-sm:flex-col max-sm:gap-5">
+            <div class="flex justify-between  max-sm:flex-col max-sm:gap-5">
               <p class="sm:w-2/3 font-light"> {description}</p>
               <p class="italic">{categories.join(' & ')}</p>
             </div>
         </div>
-        <div class="flex gap-4">
+        <div class="flex gap-4 flex-wrap">
           {langs.map(({lang}) => (
             <span class="bg-neutral-950/75 dark:bg-neutral-100 dark:text-neutral-950 text-white font-semibold py-1 px-4 rounded-xl hover:brightness-110">{lang}</span>
           ))}

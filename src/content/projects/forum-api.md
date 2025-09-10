@@ -5,7 +5,7 @@ github_link: "https://github.com/RelancioBorgesDev/forum-api"
 web_link: ""
 categories: ["Back-End"]
 year: "2024"
-banner_image: "../../assets/projects/images/forum-api.png"
+banner_image: "../../assets/projects/images/forum-api.jpg"
 banner_video: ""
 langs:
   - lang: "Typescript"
