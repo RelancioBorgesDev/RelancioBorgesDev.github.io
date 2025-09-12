@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import { ProjectsSection } from '@/components/react/projects/project-section';
 
 const collection = await getCollection('projects');
-const projects = collection.map((entry) => ({
+const projects = collection.sort((a, b) => parseInt(b.data.year) - parseInt(a.data.year)).map((entry) => ({
   slug: entry.slug,
   title: entry.data.title,
   categories: entry.data.categories,
@@ -15,6 +15,6 @@ const projects = collection.map((entry) => ({
 }));
 ---
 
-<section id="projects" class="h-fit px-8 max-sm:px-2 py-16 text-white">
+<section id="projects" class="h-fit px-8 py-16 max-sm:px-2 max-sm:py-4 max-sm:pt-16 text-white">
   <ProjectsSection client:visible projects={projects} />
 </section>

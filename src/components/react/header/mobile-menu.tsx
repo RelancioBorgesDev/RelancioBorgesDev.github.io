@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { BriefcaseBusiness, Home, Menu, User, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/components/ui/link";
@@ -39,17 +39,29 @@ export function MobileMenu() {
 
       <nav className="hidden md:flex md:items-center md:gap-4">
         <Link href="/#home">
-          <Button variant="ghost" className="text-xl font-light text-neutral-950 dark:text-neutral-200">
+          <Button
+            variant="ghost"
+            className="text-xl font-light text-neutral-950 dark:text-neutral-200 cursor-pointer"
+          >
+            <Home size={24} />
             Início
           </Button>
         </Link>
         <Link href="/#about">
-          <Button variant="ghost" className="text-xl font-light text-neutral-950 dark:text-neutral-200">
+          <Button
+            variant="ghost"
+            className="text-xl font-light text-neutral-950 dark:text-neutral-200 cursor-pointer"
+          >
+            <User size={24} />
             Sobre
           </Button>
         </Link>
         <Link href="/#projects">
-          <Button variant="ghost" className="text-xl font-light text-neutral-950 dark:text-neutral-200">
+          <Button
+            variant="ghost"
+            className="text-xl font-light text-neutral-950 dark:text-neutral-200 cursor-pointer"
+          >
+            <BriefcaseBusiness size={24} />
             Projetos
           </Button>
         </Link>
@@ -66,18 +78,33 @@ export function MobileMenu() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 bg-neutral-300 dark:bg-[#1A1A1D] flex flex-col items-center justify-center gap-6 p-6 z-40"
           >
-            <Link href="/#home" onClick={handleClose}>
-              <Button variant="ghost" className="text-2xl font-light text-neutral-950 dark:text-neutral-200 cursor-pointer">
+            <Link href="/#home">
+              <Button
+                variant="ghost"
+                className="text-2xl font-light text-neutral-950 dark:text-neutral-200 cursor-pointer"
+                onClick={handleClose}
+              >
+                <Home size={24} />
                 Início
               </Button>
             </Link>
-            <Link href="/#about" onClick={handleClose}>
-              <Button variant="ghost" className="text-2xl font-light text-neutral-950 dark:text-neutral-200 cursor-pointer">
+            <Link href="/#about">
+              <Button
+                variant="ghost"
+                className="text-2xl font-light text-neutral-950 dark:text-neutral-200 cursor-pointer"
+                onClick={handleClose}
+              >
+                <User size={24} />
                 Sobre
               </Button>
             </Link>
-            <Link href="/#projects" onClick={handleClose}>
-              <Button variant="ghost" className="text-2xl font-light text-neutral-950 dark:text-neutral-200 cursor-pointer">
+            <Link href="/#projects">
+              <Button
+                variant="ghost"
+                className="text-2xl font-light text-neutral-950 dark:text-neutral-200 cursor-pointer"
+                onClick={handleClose}
+              >
+                <BriefcaseBusiness size={24} />
                 Projetos
               </Button>
             </Link>

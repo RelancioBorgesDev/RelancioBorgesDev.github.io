@@ -40,7 +40,7 @@ export function TechAccordionSection({
       <AccordionTrigger className="text-left border-0 rounded-t-lg rounded-b-none  hover:no-underline py-4 flex cursor-pointer  ">
         <div className="flex items-center gap-3 text-neutral-950 dark:text-neutral-200">
           <span className="relative flex items-center justify-center p-2 rounded-full bg-neutral-900 dark:bg-neutral-200 text-neutral-200 dark:text-neutral-950">
-            <Icon class="text-neutral-200 dark:text-neutral-950" />
+            <Icon className="text-neutral-200 dark:text-neutral-950" />
           </span>
           <h2 className="text-neutral-950 dark:text-neutral-200 font-bold">
             {title}
