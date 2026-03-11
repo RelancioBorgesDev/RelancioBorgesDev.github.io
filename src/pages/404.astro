@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Button } from '@/components/ui/button';
+import { Home } from 'lucide-react';
+---
+
+<Layout>
+  <section class="min-h-[80vh] flex flex-col items-center justify-center text-center px-6">
+    <h1 class="text-9xl font-permanent text-neutral-900 dark:text-neutral-200">404</h1>
+    <h2 class="text-2xl font-bold mt-4 text-neutral-800 dark:text-neutral-200">Página não encontrada</h2>
+    <p class="mt-2 text-neutral-600 dark:text-neutral-400 max-w-md">
+      A página que você está procurando não existe ou foi movida.
+    </p>
+    <a href="/" class="mt-8 inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors">
+      <Home size={18} />
+      Voltar para Home
+    </a>
+  </section>
+</Layout>
