@@ -131,7 +131,7 @@ const certificatesData: CertificateItem[] = [
             type="single"
             collapsible={true}
             className="w-full text-neutral-600"
-            client:load 
+            client:visible 
           />
         </article>
 
@@ -146,7 +146,7 @@ const certificatesData: CertificateItem[] = [
             </div>
             <div class="w-fit">
               <CertificateTooltip
-                client:load
+                client:visible
                 images={[diploma.src]}
               >
                 <Button
@@ -166,7 +166,7 @@ const certificatesData: CertificateItem[] = [
         <article class="w-full">
           <SectionTitle icon={Code} title="Tecnologias"/>
           <div class="gap-8 w-full">
-            <AccordionTechnologies client:load/>
+            <AccordionTechnologies client:visible/>
           </div>
         </article>
       </section>

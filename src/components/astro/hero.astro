@@ -49,9 +49,9 @@ import {motion} from 'framer-motion'
         em soluções digitais com um toque criativo e tecnologia de ponta.
       </motion.p>
     </div>
-    <WaveTechBackground client:load/>
+    <WaveTechBackground client:visible/>
       <motion.div
-      client:load
+      client:visible
       initial={{ opacity: 0, y: 20 }}
       animate={{ 
         opacity: 1, 
@@ -65,7 +65,7 @@ import {motion} from 'framer-motion'
       }} 
       className="absolute bottom-15 max-sm:bottom-0"
     >
-    <a href="#about">
+    <a href="#about" aria-label="Ir para seção Sobre">
       <ChevronDown size={44}/>
     </a>
     </motion.div>
