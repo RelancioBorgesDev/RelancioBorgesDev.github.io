@@ -70,6 +70,7 @@ export function Filters({ onChangeFilters, projects }: FiltersProps) {
         {hasActiveFilters && (
           <button
             onClick={clearAllFilters}
+            aria-label="Limpar todos os filtros"
             className="flex items-center gap-2 cursor-pointer text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors underline"
           >
             Limpar filtros
@@ -89,6 +90,7 @@ export function Filters({ onChangeFilters, projects }: FiltersProps) {
             >
               {topic}
               <button
+                aria-label={`Remover filtro ${topic}`}
                 onClick={() =>
                   setSelectedTopics((prev) => prev.filter((t) => t !== topic))
                 }
@@ -106,6 +108,7 @@ export function Filters({ onChangeFilters, projects }: FiltersProps) {
             >
               {language}
               <button
+                aria-label={`Remover filtro ${language}`}
                 onClick={() =>
                   setSelectedLanguages((prev) =>
                     prev.filter((l) => l !== language)

@@ -17,11 +17,12 @@ export function MobileMenu() {
         <Link
           href="/"
           className="font-bold text-lg text-neutral-900 dark:text-neutral-100"
+          aria-label="Página inicial - Relancio Borges"
         >
           <motion.img
             whileHover={{ scale: 1.1 }}
             src="/favicon.svg"
-            alt="asa"
+            alt="Logo Relancio Borges"
             className="w-8 h-8"
           />
         </Link>
@@ -33,6 +34,9 @@ export function MobileMenu() {
         whileTap={{ rotate: 90 }}
         animate={{ rotate: isOpen ? 90 : 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+        aria-expanded={isOpen}
+        aria-controls="mobile-nav"
       >
         {isOpen ? <X size={32} /> : <Menu size={32} />}
       </motion.button>
@@ -72,11 +76,14 @@ export function MobileMenu() {
         {isOpen && (
           <motion.div
             key="mobile-menu"
+            id="mobile-nav"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.3 }}
             className="fixed inset-0 bg-neutral-300 dark:bg-[#1A1A1D] flex flex-col items-center justify-center gap-6 p-6 z-40"
+            role="navigation"
+            aria-label="Menu mobile"
           >
             <Link href="/#home">
               <Button
