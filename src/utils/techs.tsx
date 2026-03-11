@@ -27,7 +27,6 @@ import {
   SiTestinglibrary,
   SiVitest,
   SiRabbitmq,
-  SiApachekafka,
   SiTerraform,
   SiCloudinary,
   SiFirebase,

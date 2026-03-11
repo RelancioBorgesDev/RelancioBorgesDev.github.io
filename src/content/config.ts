@@ -10,7 +10,7 @@ const projects = defineCollection({
       categories: z.array(z.string()),
       year: z.string(),
       banner_image: image(),
-      banner_video: image(),
+      banner_video: image().optional(),
       langs: z.array(
         z.object({
           icon: z.string().optional(),
