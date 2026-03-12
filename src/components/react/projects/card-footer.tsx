@@ -19,7 +19,7 @@ export function CardFooter({
   categories,
 }: CardFooterProps) {
   return (
-    <footer className="flex max-sm:flex-col max-sm:gap-4 justify-between p-4 font-inter rounded-b-3xl dark:bg-neutral-300/5 bg-neutral-900/5 ">
+    <footer className="flex max-sm:flex-col max-sm:gap-4 justify-between p-4 font-inter rounded-b-3xl dark:bg-neutral-300/5 bg-neutral-900/5 border-2 group-hover:border-2 group-hover:border-neutral-500/50 dark:group-hover:border-neutral-500/50">
       <div className="flex flex-col gap-1 max-sm:flex-row max-sm:justify-between">
         <h3 className="text-xl font-bold text-black dark:text-white">
           {title}
