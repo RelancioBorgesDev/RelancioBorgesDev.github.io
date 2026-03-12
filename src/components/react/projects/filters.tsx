@@ -20,16 +20,14 @@ export function Filters({ onChangeFilters, projects }: FiltersProps) {
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
 
-  // Extrair tópicos únicos dos projetos reais
   const topics = React.useMemo(() => {
     const allTopics = projects.flatMap((project) => project.categories || []);
     return [...new Set(allTopics)].sort();
   }, [projects]);
 
-  // Extrair linguagens únicas dos projetos reais
   const languages = React.useMemo(() => {
     const allLanguages = projects.flatMap(
-      (project) => project.langs?.map((lang) => lang.lang) || []
+      (project) => project.langs?.map((lang) => lang.lang) || [],
     );
     return [...new Set(allLanguages)].sort();
   }, [projects]);
@@ -79,7 +77,6 @@ export function Filters({ onChangeFilters, projects }: FiltersProps) {
         )}
       </div>
 
-      {/* Mostrar filtros ativos */}
       {hasActiveFilters && (
         <div className="flex flex-wrap gap-2">
           {selectedTopics.map((topic) => (
@@ -111,7 +108,7 @@ export function Filters({ onChangeFilters, projects }: FiltersProps) {
                 aria-label={`Remover filtro ${language}`}
                 onClick={() =>
                   setSelectedLanguages((prev) =>
-                    prev.filter((l) => l !== language)
+                    prev.filter((l) => l !== language),
                   )
                 }
                 className="hover:bg-neutral-300 dark:hover:bg-neutral-600 rounded-full p-1"
