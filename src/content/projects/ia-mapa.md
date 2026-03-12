@@ -3,7 +3,7 @@ title: "IAMapa"
 description: "Projeto que utiliza de algoritimos de busca para encontrar o melhor caminho"
 github_link: "https://github.com/RelancioBorgesDev/IA-Mapa"
 web_link: ""
-categories: ["Fullstack"]
+categories: ["Full-Stack"]
 year: "2023"
 banner_image: "../../assets/projects/images/ia-mapa.png"
 banner_video: "../../assets/projects/videos/ia-mapa.gif"
