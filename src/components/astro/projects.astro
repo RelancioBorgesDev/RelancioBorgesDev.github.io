@@ -9,7 +9,7 @@ const projects = collection.sort((a, b) => parseInt(b.data.year) - parseInt(a.da
   categories: entry.data.categories,
   year: entry.data.year,
   image: entry.data.banner_image, 
-  langs: entry.data.langs.map(({ lang }) => ({
+  langs: entry.data.langs.map(({ lang }: { lang: string }) => ({
     lang,
   })),
 }));

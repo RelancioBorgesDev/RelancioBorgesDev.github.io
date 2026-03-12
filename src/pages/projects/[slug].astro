@@ -11,6 +11,10 @@ import { FaGithub } from 'react-icons/fa';
 
 const { slug } = Astro.params;
 
+if (!slug) {
+  throw new Error('Slug não encontrado');
+}
+
 const entry = await getEntry('projects', slug);
 
 if (!entry) {
@@ -113,7 +117,7 @@ export async function getStaticPaths() {
             </div>
         </div>
         <div class="flex gap-4 flex-wrap">
-          {langs.map(({lang}) => (
+          {langs.map(({lang}: { lang: string }) => (
             <span class="bg-neutral-950/75 dark:bg-neutral-100 dark:text-neutral-950 text-white font-semibold py-1 px-4 rounded-xl hover:brightness-110">{lang}</span>
           ))}
         </div>
@@ -124,6 +128,13 @@ export async function getStaticPaths() {
     <article
       class="prose dark:prose-invert max-w-none
         text-neutral-950 dark:text-neutral-200
+
+        [&_img]:rounded-xl
+        [&_img]:shadow-lg
+        [&_img]:my-6
+        [&_img]:border
+        [&_img]:border-neutral-200
+        dark:[&_img]:border-neutral-800
 
         [&_h1]:text-neutral-950 dark:[&_h1]:text-neutral-200
         [&_h2]:text-neutral-950 dark:[&_h2]:text-neutral-200
