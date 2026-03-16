@@ -18,7 +18,10 @@ langs:
 
 Uma API REST de alta performance para encurtamento de URLs, construída com **Fastify**, **TypeScript** e **PostgreSQL**, seguindo os princípios da Arquitetura Limpa e focada em observabilidade, segurança e escalabilidade.
 
-![URL Shortener API](../../assets/projects/images/url_shortener/swagger.jpg) 
+![URL Shortener API](../../assets/projects/images/url_shortener/swagger.jpg)
+<figcaption>
+Documentação da API Swagger.
+</figcaption>
 
 ---
 

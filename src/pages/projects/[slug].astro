@@ -132,9 +132,26 @@ export async function getStaticPaths() {
         [&_img]:rounded-xl
         [&_img]:shadow-lg
         [&_img]:my-6
+        [&_img]:mx-auto
         [&_img]:border
         [&_img]:border-neutral-200
         dark:[&_img]:border-neutral-800
+
+        [&_img+em]:block
+        [&_img+em]:text-center
+        [&_img+em]:text-sm
+        [&_img+em]:text-neutral-500
+
+        [&_figure]:flex
+        [&_figure]:flex-col
+        [&_figure]:items-center
+        [&_figure]:my-8
+
+        [&_figcaption]:text-center
+        [&_figcaption]:text-sm
+        [&_figcaption]:text-neutral-800
+        [&_figcaption]:dark:text-neutral-200
+        [&_figcaption]:mt-2
 
         [&_h1]:text-neutral-950 dark:[&_h1]:text-neutral-200
         [&_h2]:text-neutral-950 dark:[&_h2]:text-neutral-200

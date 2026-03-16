@@ -18,9 +18,8 @@ langs:
 
 Uma aplicação desktop de produtividade construída com **Electron**, **React** e **TypeScript**, projetada para ajudar você a organizar sua vida profissional e pessoal através de quatro pilares principais: Áreas, Metas, Hábitos e Calendário.
 
-<!-- IMG: Interface principal do Flowcus mostrando dashboard com áreas, metas, hábitos e calendário -->
-
 ![Flowcus Dashboard](../../assets/projects/images/flowcus/dashboard.jpg)
+Interface principal do Flowcus mostrando dashboard com áreas, metas, hábitos e calendário.
 
 ---
 
@@ -124,12 +123,14 @@ flowcus/
 
 ## 🚀 Funcionalidades
 
-### 📁 Áreas
+## 📁 Áreas
 
-Organize seus projetos e áreas de vida com um sistema flexível de blocos.
+### Organize seus projetos e áreas de vida com um sistema flexível de blocos.
 
-<!-- IMG: Grid de áreas com cards coloridos -->
 ![Flowcus Areas](../../assets/projects/images/flowcus/areas.jpg)
+<figcaption>
+Interface de áreas do Flowcus mostrando grid de áreas com cards coloridos.
+</figcaption>
 
 - **CRUD completo** – Crie, edite, delete e reordene áreas
 - **Visualização dual** – Escolha entre grid ou lista
@@ -138,12 +139,14 @@ Organize seus projetos e áreas de vida com um sistema flexível de blocos.
 - **Editor de blocos** – Conteúdo rico estilo Notion/Notepad++
 - **Múltiplos formatos** – Suporte a texto, listas, código, imagens
 
-### 🎯 Metas
+## 🎯 Metas
 
-Defina objetivos e acompanhe seu progresso com detalhamento granular.
+### **Defina objetivos e acompanhe seu progresso com detalhamento granular.**
 
-<!-- IMG: Card de meta com barra de progresso e tarefas -->
 ![Flowcus Goals](../../assets/projects/images/flowcus/goals.jpg)
+<figcaption>
+Interface de metas do Flowcus mostrando card de meta com barra de progresso e tarefas.
+</figcaption>
 
 - **Hierarquia** – Metas contêm tarefas
 - **Progresso automático** – Calculado baseado em tarefas concluídas
@@ -152,12 +155,14 @@ Defina objetivos e acompanhe seu progresso com detalhamento granular.
 - **Status flexíveis** – Em andamento, concluída, pausada, cancelada
 - **Ordenação avançada** – Por data, prioridade, progresso
 
-### 🌱 Hábitos
+## 🌱 Hábitos
 
-Construa rotinas positivas com acompanhamento detalhado.
+### Construa rotinas positivas com acompanhamento detalhado.
 
-<!-- IMG: Dashboard de hábitos com heatmap e estatísticas -->
 ![Flowcus Habits](../../assets/projects/images/flowcus/habits.jpg)
+<figcaption>
+Interface de hábitos do Flowcus mostrando dashboard com heatmap e estatísticas.
+</figcaption>
 
 - **Registro diário** – Marque como concluído/não concluído
 - **Estreias (streaks)** – Sequência de dias consecutivos
@@ -169,12 +174,14 @@ Construa rotinas positivas com acompanhamento detalhado.
 - **Tipos de hábito** – Rotina matutina, noturna, semanal
 - **Filtros poderosos** – Por tipo, prioridade, status
 
-### 📅 Calendário
+## 📅 Calendário
 
-Gerencie eventos e compromissos com múltiplas visualizações.
+### Gerencie eventos e compromissos com múltiplas visualizações.
 
-<!-- IMG: Calendário mensal com eventos coloridos por categoria -->
 ![Flowcus Calendar](../../assets/projects/images/flowcus/calendar.jpg)
+<figcaption>
+Interface de calendário do Flowcus mostrando calendário mensal com eventos coloridos por categoria.
+</figcaption>
 
 - **5 visualizações** – Dia, Semana, Mês, Ano, Agenda
 - **Criação contextual** – Clique em qualquer dia/horário
@@ -185,8 +192,10 @@ Gerencie eventos e compromissos com múltiplas visualizações.
 
 ### 🌍 Recursos Gerais
 
-<!-- IMG: Tela de configurações com tema escuro -->
 ![Flowcus Settings](../../assets/projects/images/flowcus/configs.jpg)
+<figcaption>
+Interface de configurações do Flowcus mostrando tema escuro e múltiplos perfis.
+</figcaption>
 
 - **Modo escuro** – Theme toggle automático e manual
 - **Múltiplos perfis** – Troca entre diferentes usuários
