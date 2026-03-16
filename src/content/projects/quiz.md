@@ -8,7 +8,7 @@ year: "2024"
 banner_image: "../../assets/projects/images/quiz-banner.png"
 banner_video: "../../assets/projects/videos/quiz-banner.gif"
 langs:
-  - lang: "Typescript"
+  - lang: "TypeScript"
   - lang: "Next JS"
   - lang: "Tailwind"
   - lang: "Framer Motion"
@@ -21,7 +21,7 @@ A ideia deste projeto foi desenvolver um quiz que tem como base criar uma forma 
 
 #### Front-end
 
-O front-end foi desenvolvido usando React (Next JS + Typescript). A aplicação consiste em 3 páginas principais
+O front-end foi desenvolvido usando React (Next JS + TypeScript). A aplicação consiste em 3 páginas principais
 
 - "/": Página inicial onde existem 2 opções, jogar e menu de opções.
 - "/games": Página onde é exibida os jogos, no caso so existe a opção de multipla escolha

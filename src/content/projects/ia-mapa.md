@@ -11,7 +11,6 @@ langs:
   - lang: "React"
   - lang: "Spring"
   - lang: "Java"
-
 ---
 
 A ideia deste projeto foi desenvolver um exemplo de um "Google Maps" usando os algoritmos de busca. O projeto fez parte dos estudos de Inteligência Artificial durante meu curso de Engenharia da Computação.
@@ -33,7 +32,7 @@ Estes endpoints fornecem informações sobre os algoritmos disponíveis, os paí
 
 #### Front-end
 
-O front-end foi desenvolvido usando React (Vite + Typescript). A ideia era de alguma maneira mostrar a eficiência dos métodos de busca, então, como um pensamento diferente de aplicar os métodos, resolvi desenvolver uma forma mais simplificada de um "Google Maps", onde o usuário pode escolher os pontos de partida até o ponto de chegada e dentro de um mapa exibir um caminho.
+O front-end foi desenvolvido usando React (Vite + TypeScript). A ideia era de alguma maneira mostrar a eficiência dos métodos de busca, então, como um pensamento diferente de aplicar os métodos, resolvi desenvolver uma forma mais simplificada de um "Google Maps", onde o usuário pode escolher os pontos de partida até o ponto de chegada e dentro de um mapa exibir um caminho.
 
 ## Considerações
 

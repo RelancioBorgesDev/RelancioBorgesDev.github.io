@@ -8,7 +8,7 @@ year: "2025"
 banner_image: "../../assets/projects/images/pet-ong.jpg"
 banner_video: ""
 langs:
-  - lang: "NodeJS"
+  - lang: "Node.js"
   - lang: "Fastify"
   - lang: "Prisma"
   - lang: "Vitest"
@@ -23,7 +23,7 @@ Este sistema foi construído com foco em **escalabilidade, organização de cód
 
 ### 🛠️ Tecnologias utilizadas
 
-- **Node.js + Fastify**: API leve e performática com tipagem forte via Typescript.
+- **Node.js + Fastify**: API leve e performática com tipagem forte via TypeScript.
 - **PostgreSQL + Prisma ORM**: Banco relacional robusto com mapeamento objeto-relacional intuitivo.
 - **Zod**: Validação segura de dados de entrada (DTOs).
 - **JWT**: Autenticação com tokens e controle de acesso por rotas.

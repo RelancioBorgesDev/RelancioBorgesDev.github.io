@@ -81,7 +81,7 @@ export const TextType = ({
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     observer.observe(containerRef.current);
@@ -104,7 +104,7 @@ export const TextType = ({
   useEffect(() => {
     if (!isVisible) return;
 
-    let timeout: NodeJS.Timeout;
+    let timeout: Node.js.Timeout;
 
     const currentText = textArray[currentTextIndex];
     const processedText = reverseMode
@@ -136,11 +136,11 @@ export const TextType = ({
           timeout = setTimeout(
             () => {
               setDisplayedText(
-                (prev) => prev + processedText[currentCharIndex]
+                (prev) => prev + processedText[currentCharIndex],
               );
               setCurrentCharIndex((prev) => prev + 1);
             },
-            variableSpeed ? getRandomSpeed() : typingSpeed
+            variableSpeed ? getRandomSpeed() : typingSpeed,
           );
         } else if (textArray.length > 1) {
           timeout = setTimeout(() => {
@@ -187,7 +187,7 @@ export const TextType = ({
     },
     <span className="inline text-neutral-950 dark:text-neutral-200">
       {displayedText}
-    </span>
+    </span>,
     /* showCursor && (
       <span
         ref={cursorRef}

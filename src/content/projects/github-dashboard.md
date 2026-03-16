@@ -8,7 +8,7 @@ year: "2024"
 banner_image: "../../assets/projects/images/github-dashboard.png"
 banner_video: "../../assets/projects/videos/github-dashboard.gif"
 langs:
-  - lang: "Typescript"
+  - lang: "TypeScript"
   - lang: "React"
   - lang: "Next JS"
   - lang: "Next Auth"
@@ -28,7 +28,6 @@ O sistema simula o processo completo de registro e login de usuários, utilizand
 - Registro de usuário com persistência dos dados simulada via `json-server`.
 - Validação de formulário com **Zod** e **React Hook Form**.
 - Sessão autenticada com dados acessíveis no Dashboard:
-
   - Visualização do nome de usuário, e-mail e senha (simulada).
   - Possibilidade de logout.
 
@@ -38,10 +37,9 @@ O sistema simula o processo completo de registro e login de usuários, utilizand
 
 ### ⚙️ Tecnologias Utilizadas
 
-- **Linguagem**: Typescript
+- **Linguagem**: TypeScript
 - **Framework principal**: Next.js (v14.1.0)
 - **Bibliotecas e Ferramentas**:
-
   - NextAuth.js
   - Tailwind CSS
   - React Hook Form
@@ -58,7 +56,6 @@ O sistema simula o processo completo de registro e login de usuários, utilizand
    Iniciei o projeto com a definição da estrutura de páginas e layout. Usei o **Excalidraw** para desenhar um esboço da interface de login e dashboard, inspirando-me em modelos modernos de UI/UX.
 
 2. **Implementação técnica**
-
    - Criação das rotas principais: Home, Login, Registro e Dashboard.
    - Configuração do Tailwind CSS para estilo responsivo e acessível.
    - Implementação da lógica de autenticação com **NextAuth**.

@@ -39,7 +39,7 @@ export const frontendTechs = [
   { icon: <FaJs className="h-4 w-4 text-yellow-500" />, label: "JavaScript" },
   {
     icon: <SiTypescript className="h-4 w-4 text-blue-500" />,
-    label: "Typescript",
+    label: "TypeScript",
   },
   { icon: <FaReact className="h-4 w-4 text-cyan-400" />, label: "React" },
   {

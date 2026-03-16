@@ -8,7 +8,7 @@ year: "2024"
 banner_image: "../../assets/projects/images/plot.png"
 banner_video: "../../assets/projects/videos/plot.gif"
 langs:
-  - lang: "Typescript"
+  - lang: "TypeScript"
   - lang: "Firebase"
   - lang: "Next JS"
 ---
@@ -20,11 +20,9 @@ O objetivo deste projeto foi criar uma interface web que apresenta os dados de u
 **Funcionalidades Implementadas:**
 
 1. **Conexão com o Raspberry Pi:**
-
    - Estabelecemos uma conexão entre a aplicação web e o Raspberry Pi para receber os dados do semáforo em tempo real.
 
 2. **Visualização de Dados:**
-
    - Desenvolvemos diferentes formas de visualização dos dados do semáforo, incluindo representações gráficas e simbólicas.
    - Os dados são apresentados em formato de array, onde cada valor representa uma cor do semáforo: `{0,0,1}` para vermelho, amarelo e verde, respectivamente.
 
