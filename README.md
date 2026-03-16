@@ -12,16 +12,40 @@
 
 </div>
 
-Este é o repositório do meu portfólio, desenvolvido com Astro, React e Tailwind CSS.
+## Sobre o Projeto
+
+Este é o repositório do meu portfólio pessoal, desenvolvido com **Astro**, **React** e **Tailwind CSS**.
 
 O objetivo deste projeto é me apresentar, exibir alguns dos meus trabalhos e compartilhar o processo de desenvolvimento, explicando as ideias por trás de cada projeto.
+
+## Tecnologias
+
+- **Astro** - Framework web rápido e moderno
+- **React** - Biblioteca para interfaces interativas
+- **Tailwind CSS** - Framework CSS utilitário
+- **TypeScript** - Tipagem estática
+
+## Como Executar
+
+```bash
+# Instalar dependências
+npm install
+
+# Iniciar servidor de desenvolvimento
+npm run dev
+
+# Build para produção
+npm run build
+```
+
+---
 
 ## Contato
 
 Para qualquer dúvida ou sugestão, entre em contato através de:
 
-- **Email:** <relancio.dev@gmail.com>
-- **LinkedIn:** [Meu Linkedin](https://www.linkedin.com/in/relancioborges/)
+- **Email:** relancio.dev@gmail.com
+- **LinkedIn:** [Meu LinkedIn](https://www.linkedin.com/in/relancioborges/)
 - **Site:** [Meu Portfólio](https://relancioborgesdev.com/)
 
 ---
