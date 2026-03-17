@@ -77,10 +77,10 @@ export function MobileMenu() {
           <motion.div
             key="mobile-menu"
             id="mobile-nav"
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
             className="fixed inset-0 bg-neutral-300 dark:bg-[#1A1A1D] flex flex-col items-center justify-center gap-6 p-6 z-40"
             role="navigation"
             aria-label="Menu mobile"
