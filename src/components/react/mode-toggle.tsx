@@ -7,7 +7,9 @@ export function ModeToggle() {
     if (typeof window === "undefined") return "light";
     const stored = localStorage.getItem("theme");
     if (stored === "light" || stored === "dark") return stored;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
   });
 
   React.useEffect(() => {
@@ -29,18 +31,7 @@ export function ModeToggle() {
       aria-label="Toggle theme"
       className="rounded-full cursor-pointer"
     >
-      <Sun
-        className={`transition-all ${
-          theme === "dark"
-            ? "scale-0 rotate-90"
-            : "scale-100 rotate-0 text-zinc-950"
-        }`}
-      />
-      <Moon
-        className={`absolute transition-all ${
-          theme === "dark" ? "scale-100 rotate-0" : "scale-0 rotate-90 "
-        }`}
-      />
+      {theme === "dark" ? <Sun /> : <Moon className="dark:text-zinc-50 text-zinc-950"/>}
     </Button>
   );
 }
