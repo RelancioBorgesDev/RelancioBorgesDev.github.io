@@ -53,7 +53,7 @@ export async function getStaticPaths() {
         <a href="/" class="flex items-center gap-2 cursor-pointer">
           <Button variant={"ghost"} className='hover:bg-transparent cursor-pointer' client:visible>
             <ChevronLeft/>
-            <span class="text-md font-bold">Voltar para o inicio</span>
+            <span class="text-md font-bold">Voltar</span>
           </Button>
         </a>
         <div class="flex flex-col-reverse justify-end items-end">
@@ -85,7 +85,7 @@ export async function getStaticPaths() {
       <div class="py-4 flex flex-col gap-4 ">
         <div class="py-4 flex flex-col gap-4 text-neutral-950 dark:text-neutral-50">
             <div class="w-full flex items-center justify-between gap-4 max-sm:flex-col max-sm:items-start max-sm:gap-5">
-              <h1 class="font-inter text-5xl font-bold tracking-tight">{title}</h1>
+              <h1 class="font-inter text-4xl md:text-5xl font-bold tracking-tight">{title}</h1>
               <div class="flex gap-2 items-center">
                 {github_link && ( 
                     <a   
@@ -135,6 +135,10 @@ export async function getStaticPaths() {
         [&_img]:mx-auto
         [&_img]:border
         [&_img]:border-neutral-200
+        [&_img]:max-w-full
+        [&_img]:w-auto
+        [&_img]:h-auto
+        [&_img]:max-h-[500px]
         dark:[&_img]:border-neutral-800
 
         [&_img+em]:block
