@@ -5,7 +5,6 @@ import { SectionTitle } from '@/components/react/about/section-title'
 import { CertificateTooltip } from '@/components/react/about/education/certificate-tooltip'
 import { AccordionTechnologies } from '@/components/react/about/tech/accordion-technologies'
 import { Achievements, type CertificateItem } from '@/components/react/about/achievements/achievements'
-import { motion } from "framer-motion";
 
 import diploma from "/public/certificados/diploma.png";
 import vptech from "../../assets/logo/vpTech.png";
@@ -73,13 +72,9 @@ const certificatesData: CertificateItem[] = [
 
 ---
 
-<motion.section
+<section
   id="about"
-  client:visible   
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
-  className="scroll-mt-24 h-full dark:bg-neutral-700/50 bg-neutral-100 rounded-lg z- shadow-2xl backdrop:shadow-2xl max-sm:mt-20 mx-4">
+  class="scroll-mt-24 h-full dark:bg-neutral-700/50 bg-neutral-100 rounded-lg z- shadow-2xl backdrop:shadow-2xl max-sm:mt-20 mx-4 animate-fade-in">
   <main  class=" z-20 py-8 px-4 md:px-6 lg:px-8">
     <div   class="grid lg:grid-cols-3 gap-16">
       
@@ -197,7 +192,7 @@ const certificatesData: CertificateItem[] = [
             </li>
             <li>
               <a
-                href="https:https://github.com/RelancioBorgesDev"
+                href="https://github.com/RelancioBorgesDev"
                 class="w-fit flex items-center gap-2 text-neutral-950 dark:text-neutral-200 hover:text-gray-800 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -236,4 +231,4 @@ const certificatesData: CertificateItem[] = [
 
     </div>
   </main>
-</motion.section>
+</section>
